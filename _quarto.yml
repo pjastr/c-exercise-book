@@ -1,0 +1,36 @@
+project:
+  type: book
+
+book:
+  title: "C - exercise book"
+  author: Piotr Jastrzębski
+  date: today
+  cover-image: logo-c.jpg
+  chapters:
+    - index.qmd
+    - part: "Fundamentals of the C Language"
+      chapters: 
+       - inputoutput.qmd
+       - arithmeticoperators.qmd
+    - references.qmd
+  downloads: pdf
+  repo-url: https://github.com/pjastr/c-exercise-book
+  repo-actions: [issue]
+
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: solar
+    lang: en
+  pdf:
+    lang: en
+    header-includes: |
+      \titlehead{\includegraphics[width=6in]{logo-c.jpg}}
+
+
+editor: visual
+

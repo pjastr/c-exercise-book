@@ -1,0 +1,44 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "C - exercise book",
+    "section": "",
+    "text": "C - exercise book\nHere you will find a collection of programming exercises in the C language. The inspiration was to compile tasks created during teaching classes carried out at the Faculty of Mathematics and Computer Science of the University of Warmia and Mazury in Olsztyn.\nSome of the exercises have been machine-translated into English. In case of any ambiguities, please get in touch via email.\n\n\n\n\nKrzaczkowski, Jacek. 2011. Zadania z Programowania w Języku c/c++, Cz. I. Instytut Informatyki UMCS Lublin.",
+    "crumbs": [
+      "C - exercise book"
+    ]
+  },
+  {
+    "objectID": "inputoutput.html",
+    "href": "inputoutput.html",
+    "title": "1  Input and Output Operations",
+    "section": "",
+    "text": "Write a programme that asks the user to enter a single integer, then displays it on the screen.\nCreate a programme that reads two floating-point numbers from the user and prints their difference.\nDesign an application that asks the user for their year of birth, then prints the previous year (one less).\nWrite a programme that reads three integers from the user and prints their average as a floating-point value.\nCreate a programme that asks the user to enter two letters (characters), then prints them in reverse order.\nWrite a programme that asks the user to enter a single floating-point number, then doubles its value and prints the result.\nCreate a programme that reads a floating-point number from the user representing an amount in dollars, then prints how much that is in euros, using a fixed exchange rate (e.g. 1 dollar = 0.85 euros).\nWrite a programme that displays the following text on the screen: This is a quote: \"I often use the C language.\". Ensure that the quotation marks are correctly displayed as part of the string.\nCreate a programme that prints a Windows folder path to standard output, e.g. C:\\Program Files\\MyApplication\\ (hardcoded, without retrieving anything from the system) or C:\\\\Program Files\\\\MyApplication\\\\.\nDesign a programme that demonstrates how to print the following text on the screen: Special characters: \\t (tab), \\n (newline), % (percent), \\\\ (backslash).\nWrite a programme that reads two rational numbers from standard input representing the lengths of the legs of a right-angled triangle. Then calculate and display the length of the hypotenuse.\nWrite a programme that reads an integer from standard input and prints its absolute value to standard output.\nWrite a programme that reads a floating-point number from standard input and prints its absolute value to standard output.\nFind an example and display on standard output a case where the addition of floating-point numbers is not associative.",
+    "crumbs": [
+      "Fundamentals of the C Language",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Input and Output Operations</span>"
+    ]
+  },
+  {
+    "objectID": "arithmeticoperators.html",
+    "href": "arithmeticoperators.html",
+    "title": "2  Arithmetic Operators",
+    "section": "",
+    "text": "Write a programme that calculates the remainder of dividing the sum of two integers by a third integer.\nCreate a programme that calculates the difference of squares of two given integers.\nWrite a programme that calculates the product of the difference of two integers and a third integer.\nDesign a programme that calculates the geometric mean of the absolute values of three given integers.\nWrite a programme that calculates the square of the sum of two given integers.\nCreate a programme that calculates the sum of squares of three given integers.\nWrite a programme that calculates how many times one given integer fits into another given integer.\nDesign a programme that calculates the square of the difference of two given integers.\nWrite a programme that calculates the quotient of the sum of two integers divided by their difference.\nCreate a programme that calculates the sum of three consecutive integers, starting from a given integer.\nFind the arithmetic mean of three floating-point numbers.\nCalculate the value of the expression \\(\\frac{1}{\\frac{1}{a} + \\frac{1}{b} + \\frac{1}{c}}\\), where \\(a\\), \\(b\\), \\(c\\) are non-zero.\nCalculate the value of \\(e^x\\) for small values of \\(x\\), e.g. \\(|x| &lt; 0.01\\), approximating \\(e^x\\) as \\(1 + x\\), without using exponential functions.\nCalculate the area of a triangle with sides \\(a\\), \\(b\\) and the angle \\(C\\) between them in degrees, using the formula \\(0.5 \\cdot a \\cdot b \\cdot \\sin C\\), assuming \\(\\sin C \\approx C\\) for small angles in radians.\nCalculate \\(\\sqrt[3]{x}\\) for small values of \\(x\\), e.g. \\(|x| &lt; 0.01\\), approximating \\(\\sqrt[3]{x} \\approx 1 + \\frac{1}{3}x\\), without using any root functions.",
+    "crumbs": [
+      "Fundamentals of the C Language",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Arithmetic Operators</span>"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "Bibliography and Other Problem Sets",
+    "section": "",
+    "text": "Krzaczkowski, Jacek. 2011. Zadania z Programowania w Języku c/c++,\nCz. I. Instytut Informatyki UMCS Lublin.",
+    "crumbs": [
+      "Bibliography and Other Problem Sets"
+    ]
+  }
+]

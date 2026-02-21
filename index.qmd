@@ -1,0 +1,10 @@
+# C - exercise book {.unnumbered}
+
+Here you will find a collection of programming exercises in the C language. The inspiration was to compile tasks created during teaching classes carried out at the Faculty of Mathematics and Computer Science of the University of Warmia and Mazury in Olsztyn.
+
+*Some of the exercises have been machine-translated into English. In case of any ambiguities, please get in touch via email.* 
+
+---
+nocite: |
+  @*
+---
