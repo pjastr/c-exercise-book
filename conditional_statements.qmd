@@ -1,0 +1,29 @@
+# Conditional statements, conditional operator
+
+In the following exercises, use `if`, `if else`, or `switch case` as the conditional statement. The conditional operator refers to `?`.
+
+1. Write a programme that asks the user to enter an integer. The programme should display whether the entered number is positive, negative, or equal to zero.
+
+2. Write a programme that takes two integers from the user and displays the larger of the two.
+
+3. Write a programme that asks the user to enter a grade on a scale from 1 to 5. The programme should display a description of the grade: fail (1), poor (2), satisfactory (3), good (4), very good (5). For a number outside the range, the programme should display an error message.
+
+4. Write a programme that asks the user to enter three distinct integers and displays the smallest of them.
+
+5. Write a programme that asks the user for a year and checks whether the given year is a leap year. A leap year is one that is divisible by 4 but not divisible by 100, unless it is also divisible by 400.
+
+6. Write a programme that takes two integers from the user and displays whether the sum of both numbers is even or odd.
+
+7. Write a programme that takes three floating-point numbers `a, b, c` from the user. Treat them as the coefficients of a quadratic equation $ax^2+bx+c=0$. Print all solution variants of this equation to standard output.
+
+8. Write a programme that takes two integers as input from the user and uses the conditional operator to find and display the larger of the two.
+
+9. Write a programme that takes three integers as input from the user and uses the conditional operator to find and display the smallest of them.
+
+10. Using the conditional operator `?`, write a programme that takes a single integer from the user and displays "even" or "odd" depending on the value of the number.
+
+11. Create a programme that asks the user to enter two floating-point numbers and uses the conditional operator to display which of them is larger, or whether they are equal to two decimal places.
+
+12. Using the conditional operator, write a programme that asks the user to enter a grade on a scale from 0 to 100 and displays "Pass" if the grade is greater than or equal to 51, or "Fail" otherwise.
+
+13. Write a programme that takes a year as input from the user and uses the conditional operator to check whether it is a leap year. The programme should display "Leap year" or "Not a leap year" depending on the result.

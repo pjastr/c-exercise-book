@@ -12,6 +12,8 @@ book:
       chapters: 
        - inputoutput.qmd
        - arithmeticoperators.qmd
+       - conditional_statements.qmd
+       - bitwise_operators.qmd
     - references.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/c-exercise-book

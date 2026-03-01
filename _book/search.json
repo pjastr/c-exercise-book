@@ -32,6 +32,28 @@
     ]
   },
   {
+    "objectID": "conditional_statements.html",
+    "href": "conditional_statements.html",
+    "title": "3  Conditional statements, conditional operator",
+    "section": "",
+    "text": "In the following exercises, use if, if else, or switch case as the conditional statement. The conditional operator refers to ?.\n\nWrite a programme that asks the user to enter an integer. The programme should display whether the entered number is positive, negative, or equal to zero.\nWrite a programme that takes two integers from the user and displays the larger of the two.\nWrite a programme that asks the user to enter a grade on a scale from 1 to 5. The programme should display a description of the grade: fail (1), poor (2), satisfactory (3), good (4), very good (5). For a number outside the range, the programme should display an error message.\nWrite a programme that asks the user to enter three distinct integers and displays the smallest of them.\nWrite a programme that asks the user for a year and checks whether the given year is a leap year. A leap year is one that is divisible by 4 but not divisible by 100, unless it is also divisible by 400.\nWrite a programme that takes two integers from the user and displays whether the sum of both numbers is even or odd.\nWrite a programme that takes three floating-point numbers a, b, c from the user. Treat them as the coefficients of a quadratic equation \\(ax^2+bx+c=0\\). Print all solution variants of this equation to standard output.\nWrite a programme that takes two integers as input from the user and uses the conditional operator to find and display the larger of the two.\nWrite a programme that takes three integers as input from the user and uses the conditional operator to find and display the smallest of them.\nUsing the conditional operator ?, write a programme that takes a single integer from the user and displays “even” or “odd” depending on the value of the number.\nCreate a programme that asks the user to enter two floating-point numbers and uses the conditional operator to display which of them is larger, or whether they are equal to two decimal places.\nUsing the conditional operator, write a programme that asks the user to enter a grade on a scale from 0 to 100 and displays “Pass” if the grade is greater than or equal to 51, or “Fail” otherwise.\nWrite a programme that takes a year as input from the user and uses the conditional operator to check whether it is a leap year. The programme should display “Leap year” or “Not a leap year” depending on the result.",
+    "crumbs": [
+      "Fundamentals of the C Language",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Conditional statements, conditional operator</span>"
+    ]
+  },
+  {
+    "objectID": "bitwise_operators.html",
+    "href": "bitwise_operators.html",
+    "title": "4  Bitwise operators",
+    "section": "",
+    "text": "Swap the values of two integer variables without using an additional variable.\nCheck whether an integer is even or odd using bitwise operators.\nDetermine the value of the bit at a specified position in an integer.\nClear the value of the bit at a specified position in an integer.\nInvert the values of all bits in an integer.\nShift the bits of an integer a specified number of positions to the left.\nShift the bits of an integer a specified number of positions to the right.\nDetermine the XOR of two integers.",
+    "crumbs": [
+      "Fundamentals of the C Language",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Bitwise operators</span>"
+    ]
+  },
+  {
     "objectID": "references.html",
     "href": "references.html",
     "title": "Bibliography and Other Problem Sets",

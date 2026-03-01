@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bibliography and Other Problem Sets – C - exercise book</title>
+<title>4&nbsp; Bitwise operators – C - exercise book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./bitwise_operators.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./conditional_statements.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -267,7 +249,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">Bibliography and Other Problem Sets</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./bitwise_operators.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -334,7 +316,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bitwise_operators.html" class="sidebar-item-text sidebar-link">
+  <a href="./bitwise_operators.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></span></a>
   </div>
 </li>
@@ -342,7 +324,7 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliography and Other Problem Sets</span></a>
   </div>
 </li>
@@ -358,9 +340,9 @@ div.csl-indent {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./bitwise_operators.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Bibliography and Other Problem Sets</h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></h1>
 </div>
 
 
@@ -377,12 +359,16 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-krzaczkowski_zadania_z_programowania_w_jezyku_c_cpp_cz_i" class="csl-entry" role="listitem">
-Krzaczkowski, Jacek. 2011. <em>Zadania z Programowania w Języku c/c++,
-Cz. I</em>. Instytut Informatyki UMCS Lublin.
-</div>
-</div>
+<ol type="1">
+<li>Swap the values of two integer variables without using an additional variable.</li>
+<li>Check whether an integer is even or odd using bitwise operators.</li>
+<li>Determine the value of the bit at a specified position in an integer.</li>
+<li>Clear the value of the bit at a specified position in an integer.</li>
+<li>Invert the values of all bits in an integer.</li>
+<li>Shift the bits of an integer a specified number of positions to the left.</li>
+<li>Shift the bits of an integer a specified number of positions to the right.</li>
+<li>Determine the XOR of two integers.</li>
+</ol>
 
 
 
@@ -802,11 +788,14 @@ Cz. I</em>. Instytut Informatyki UMCS Lublin.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./bitwise_operators.html" class="pagination-link" aria-label="Bitwise operators">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></span>
+      <a href="./conditional_statements.html" class="pagination-link" aria-label="Conditional statements, conditional operator">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional statements, conditional operator</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./references.html" class="pagination-link" aria-label="Bibliography and Other Problem Sets">
+        <span class="nav-page-text">Bibliography and Other Problem Sets</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Bibliography and Other Problem Sets – C - exercise book</title>
+<title>3&nbsp; Conditional statements, conditional operator – C - exercise book</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,26 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -49,7 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./bitwise_operators.html" rel="prev">
+<link href="./bitwise_operators.html" rel="next">
+<link href="./arithmeticoperators.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -93,6 +75,35 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -267,7 +278,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./references.html">Bibliography and Other Problem Sets</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./conditional_statements.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional statements, conditional operator</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -328,7 +339,7 @@ div.csl-indent {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./conditional_statements.html" class="sidebar-item-text sidebar-link">
+  <a href="./conditional_statements.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional statements, conditional operator</span></span></a>
   </div>
 </li>
@@ -342,7 +353,7 @@ div.csl-indent {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link active">
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliography and Other Problem Sets</span></a>
   </div>
 </li>
@@ -358,9 +369,9 @@ div.csl-indent {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./conditional_statements.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional statements, conditional operator</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Bibliography and Other Problem Sets</h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional statements, conditional operator</span></h1>
 </div>
 
 
@@ -377,12 +388,22 @@ div.csl-indent {
 </header>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
-<div id="ref-krzaczkowski_zadania_z_programowania_w_jezyku_c_cpp_cz_i" class="csl-entry" role="listitem">
-Krzaczkowski, Jacek. 2011. <em>Zadania z Programowania w Języku c/c++,
-Cz. I</em>. Instytut Informatyki UMCS Lublin.
-</div>
-</div>
+<p>In the following exercises, use <code>if</code>, <code>if else</code>, or <code>switch case</code> as the conditional statement. The conditional operator refers to <code>?</code>.</p>
+<ol type="1">
+<li><p>Write a programme that asks the user to enter an integer. The programme should display whether the entered number is positive, negative, or equal to zero.</p></li>
+<li><p>Write a programme that takes two integers from the user and displays the larger of the two.</p></li>
+<li><p>Write a programme that asks the user to enter a grade on a scale from 1 to 5. The programme should display a description of the grade: fail (1), poor (2), satisfactory (3), good (4), very good (5). For a number outside the range, the programme should display an error message.</p></li>
+<li><p>Write a programme that asks the user to enter three distinct integers and displays the smallest of them.</p></li>
+<li><p>Write a programme that asks the user for a year and checks whether the given year is a leap year. A leap year is one that is divisible by 4 but not divisible by 100, unless it is also divisible by 400.</p></li>
+<li><p>Write a programme that takes two integers from the user and displays whether the sum of both numbers is even or odd.</p></li>
+<li><p>Write a programme that takes three floating-point numbers <code>a, b, c</code> from the user. Treat them as the coefficients of a quadratic equation <span class="math inline">\(ax^2+bx+c=0\)</span>. Print all solution variants of this equation to standard output.</p></li>
+<li><p>Write a programme that takes two integers as input from the user and uses the conditional operator to find and display the larger of the two.</p></li>
+<li><p>Write a programme that takes three integers as input from the user and uses the conditional operator to find and display the smallest of them.</p></li>
+<li><p>Using the conditional operator <code>?</code>, write a programme that takes a single integer from the user and displays “even” or “odd” depending on the value of the number.</p></li>
+<li><p>Create a programme that asks the user to enter two floating-point numbers and uses the conditional operator to display which of them is larger, or whether they are equal to two decimal places.</p></li>
+<li><p>Using the conditional operator, write a programme that asks the user to enter a grade on a scale from 0 to 100 and displays “Pass” if the grade is greater than or equal to 51, or “Fail” otherwise.</p></li>
+<li><p>Write a programme that takes a year as input from the user and uses the conditional operator to check whether it is a leap year. The programme should display “Leap year” or “Not a leap year” depending on the result.</p></li>
+</ol>
 
 
 
@@ -802,11 +823,14 @@ Cz. I</em>. Instytut Informatyki UMCS Lublin.
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./bitwise_operators.html" class="pagination-link" aria-label="Bitwise operators">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></span>
+      <a href="./arithmeticoperators.html" class="pagination-link" aria-label="Arithmetic Operators">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Arithmetic Operators</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
+      <a href="./bitwise_operators.html" class="pagination-link" aria-label="Bitwise operators">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
   </div>
 </nav>
 </div> <!-- /content -->

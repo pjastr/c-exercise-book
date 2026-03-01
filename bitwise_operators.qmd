@@ -1,0 +1,10 @@
+# Bitwise operators
+
+1.  Swap the values of two integer variables without using an additional variable.
+2.  Check whether an integer is even or odd using bitwise operators.
+3.  Determine the value of the bit at a specified position in an integer.
+4.  Clear the value of the bit at a specified position in an integer.
+5.  Invert the values of all bits in an integer.
+6.  Shift the bits of an integer a specified number of positions to the left.
+7.  Shift the bits of an integer a specified number of positions to the right.
+8.  Determine the XOR of two integers.
