@@ -1,0 +1,39 @@
+# Loops
+
+The tasks should be solved without arrays, strings, pointers, or built-in math functions. Do not create your own functions either.
+
+1. Write a program that displays all integers from 1 to 100 using a `for` loop.
+
+2. Create a program that asks the user to enter an integer `n`, and then displays the sum of all integers from 1 to `n` using a `while` loop.
+
+3. Write a program that reads integers from the user until zero is entered, and then displays the sum of all positive numbers and the sum of all negative numbers, using a `do-while` loop.
+
+4. Create a program that calculates and displays the factorial of a non-negative integer entered by the user, using a `for` loop.
+
+5. Write a program that displays the first 10 numbers of the Fibonacci sequence using a `while` loop.
+
+6.  Write a program that asks the user to enter a positive integer `n`, and then calculates and displays $\lfloor \sqrt{n} \rfloor$ (the integer part/floor of the square root).
+
+7.  Write a program that asks the user to enter a positive integer `n`, and then calculates and displays $\lceil \sqrt{n} \rceil$ (the ceiling of the square root).
+
+8. Write a program that asks the user to enter 10 positive integers and arranges them into a sequence $a_1, \ldots, a_{10}$. Calculate and display how many elements of the sequence satisfy the inequality $a_k < \frac{a_{k-1}+a_{k+1}}{2}$ for $1<k<10$.
+
+9. Write a program that asks the user to enter a positive integer $n$, and then $n$ positive integers and arranges them into a sequence $a_1, \ldots, a_n$. Calculate and display how many elements of the sequence satisfy the inequality $a_k < \frac{a_{k-1}+a_{k+1}}{2}$ for $1<k<n$.
+
+10. Write a program that checks the divisibility of a number n by all numbers from 2 to n/2. The program should print all divisors of that number. Read the value of n from the user.
+
+11. Write a program that reads an integer n and prints all its digits from the end (starting from the units digit) and calculates their sum.
+
+12. Write a program implementing the Euclidean algorithm in an iterative version using subtraction. The program should read two natural numbers a and b, and then print their greatest common divisor.
+
+12. Write a program implementing the Euclidean algorithm in an iterative version using division. The program should read two natural numbers a and b, and then print their greatest common divisor.
+
+13. Write a program that checks whether a given number n is a prime number. The program should check all potential divisors from 2 to the square root of n (use a loop to calculate the square root). Print an appropriate message.
+
+14. Write a program simulating change-making. The program should read the amount to be given as change and print how many coins of denominations 5, 2, and 1 should be used to minimize the total number of coins. Print the number of coins of each type.
+
+15. Write a program that determines the approximate value of the square root of a number a using Newton's method (iterative). The initial approximation is `x₀ = a/2`, and subsequent values are calculated using the formula `x_{i+1} = (x_i + a/x_i)/2`. Perform 10 iterations of the algorithm and print the final result.
+
+16. Write a program that reads from the user the degree of a polynomial, the coefficients (from the highest power to the constant term), and the value of x.
+Calculate the value of the polynomial using Horner's method, utilizing a loop.
+Display the result of the calculations.

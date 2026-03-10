@@ -14,6 +14,8 @@ book:
        - arithmeticoperators.qmd
        - conditional_statements.qmd
        - bitwise_operators.qmd
+       - debugging.qmd
+       - loops.qmd
     - references.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/c-exercise-book
