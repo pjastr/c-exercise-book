@@ -16,10 +16,14 @@ book:
        - bitwise_operators.qmd
        - debugging.qmd
        - loops.qmd
+       - functions.qmd
     - references.qmd
-  downloads: pdf
+  downloads: [pdf, epub]
   repo-url: https://github.com/pjastr/c-exercise-book
   repo-actions: [issue]
+  
+execute:
+  freeze: auto
 
 
 bibliography: references.bib
@@ -34,7 +38,10 @@ format:
     lang: en
     header-includes: |
       \titlehead{\includegraphics[width=6in]{logo-c.jpg}}
+  epub:
+    lang: pl
+    cover-image: logo-c.jpg
+    toc: true
 
 
-editor: visual
 

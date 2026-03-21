@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; Bitwise operators – C - exercise book</title>
+<title>7&nbsp; Functions – C - exercise book</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./debugging.html" rel="next">
-<link href="./conditional_statements.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./loops.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -77,6 +77,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -251,7 +280,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./bitwise_operators.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./functions.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Functions</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -332,7 +361,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./bitwise_operators.html" class="sidebar-item-text sidebar-link active">
+  <a href="./bitwise_operators.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></span></a>
   </div>
 </li>
@@ -350,7 +379,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./functions.html" class="sidebar-item-text sidebar-link">
+  <a href="./functions.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Functions</span></span></a>
   </div>
 </li>
@@ -374,9 +403,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./bitwise_operators.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./functions.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Functions</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Functions</span></h1>
 </div>
 
 
@@ -393,15 +422,26 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>Solve the exercises without using arrays, strings, pointers, or built-in math functions. You may create additional helper functions for each exercise. For each function described in the exercise, provide a test case (call it at least once with a valid argument). The exercises use the <code>camelCase</code> naming convention. Pay attention to whether the function should return a value or print it.</p>
 <ol type="1">
-<li>Swap the values of two integer variables without using an additional variable.</li>
-<li>Check whether an integer is even or odd using bitwise operators.</li>
-<li>Determine the value of the bit at a specified position in an integer.</li>
-<li>Clear the value of the bit at a specified position in an integer.</li>
-<li>Invert the values of all bits in an integer.</li>
-<li>Shift the bits of an integer a specified number of positions to the left.</li>
-<li>Shift the bits of an integer a specified number of positions to the right.</li>
-<li>Determine the XOR of two integers.</li>
+<li><p>Write a function <code>sumTwoNumbers</code> that takes two integers as arguments. The function should print the sum of the numbers passed as arguments. Create a test case.</p></li>
+<li><p>Write a function <code>calculateAbsoluteValue</code> that takes a floating-point number as an argument. The function should return the absolute value of the number passed as an argument. Create a test case.</p></li>
+<li><p>Write a function <code>calculateFactorial</code> that takes a non-negative integer as an argument. The function should return the factorial of the number passed as an argument, computed using a non-recursive method. Create a test case.</p></li>
+<li><p>Write a function <code>sumNumbers</code> that takes a positive integer <span class="math inline">\(n\)</span> as an argument. The function should return the sum of numbers from 1 to <span class="math inline">\(n\)</span> inclusive. Create a test case.</p></li>
+<li><p>Write a function <code>sumSquares</code> that takes a positive integer <span class="math inline">\(n\)</span> as an argument. The function should return the sum of squares of numbers from 1 to <span class="math inline">\(n\)</span> inclusive. Create a test case.</p></li>
+<li><p>Write a function <code>calculatePowerOfTwo</code> that takes an integer <span class="math inline">\(n\)</span> as an argument. The function should return the value of <span class="math inline">\(2^n\)</span>. Create a test case.</p></li>
+<li><p>Write a function <code>calculateSquareRootFloor</code> that takes a non-negative integer <span class="math inline">\(n\)</span> as an argument. The function should return the integer part of the square root of <span class="math inline">\(n\)</span>. Create a test case.</p></li>
+<li><p>Write a function <code>countFunctionCalls</code> that takes no arguments. The function should count and print to standard output the number of times it has been called since the program started. Create a test case. Use static variables.</p></li>
+<li><p>Write a function <code>calculateFactorialRecursively</code> that takes a non-negative integer <span class="math inline">\(n\)</span> as an argument. The function should return the factorial of <span class="math inline">\(n\)</span>, computed using a recursive method. Create a test case.</p></li>
+<li><p>Write a function <code>calculateFibonacciRecursively</code> that takes a non-negative integer <span class="math inline">\(n\)</span> as an argument. The function should return the <span class="math inline">\(n\)</span>-th term of the Fibonacci sequence, computed using a recursive method. Create a test case.</p></li>
+<li><p>Write a function <code>calculateArithmeticSequenceRecursively</code> that takes two positive integers as arguments: <span class="math inline">\(n\)</span> (the index of the sequence term to compute) and <span class="math inline">\(d\)</span> (the common difference of the arithmetic sequence), assuming the initial term <span class="math inline">\(a_1\)</span> equals 1. The function should return the <span class="math inline">\(n\)</span>-th term of the arithmetic sequence, computed using a recursive method. Create a test case.</p></li>
+<li><p>Write a function <code>calculateGeometricSequenceRecursively</code> that takes two positive integers as arguments: <span class="math inline">\(n\)</span> (the index of the sequence term to compute) and <span class="math inline">\(d\)</span> (the common ratio of the geometric sequence), assuming the initial term <span class="math inline">\(a_1\)</span> equals 1. The function should return the <span class="math inline">\(n\)</span>-th term of the geometric sequence, computed using a recursive method. Create a test case.</p></li>
+<li><p>Write a function <code>calculate13</code> that takes a positive integer <span class="math inline">\(n\)</span> as an argument. The function should return the value defined by <span class="math inline">\(f(n) = 2f(n-1) + 3\)</span>, where <span class="math inline">\(f(1) = 1\)</span>. Create a test case.</p></li>
+<li><p>Write a function <code>calculate14</code> that takes a positive integer <span class="math inline">\(n\)</span> as an argument. The function should return the value defined by <span class="math inline">\(f(n) = 3f(n-1) - 1\)</span>, where <span class="math inline">\(f(1) = 2\)</span>. Create a test case.</p></li>
+<li><p>Write a function <code>calculate15</code> that takes a positive integer <span class="math inline">\(n\)</span> as an argument. The function should return the value defined by <span class="math inline">\(f(n) = f(n-1) + 2f(n-2)\)</span>, where <span class="math inline">\(f(1) = 1\)</span> and <span class="math inline">\(f(2) = 2\)</span>. Create a test case.</p></li>
+<li><p>Write a function <code>calculate16</code> that takes a positive integer <span class="math inline">\(n\)</span> as an argument. The function should return the value defined by <span class="math inline">\(f(n) = 2f(n-1) + 3f(n-2)\)</span>, where <span class="math inline">\(f(1) = 2\)</span> and <span class="math inline">\(f(2) = 3\)</span>. Create a test case.</p></li>
+<li><p>Write a recursive function <code>calculate17</code> that takes a non-negative integer <span class="math inline">\(n\)</span> as an argument. The function should return the value defined by <span class="math inline">\(f(n) = f(0)+f(1)+\ldots +f(n-1)\)</span>, where <span class="math inline">\(f(0) = f(1) = 1\)</span>. Create a test case.</p></li>
+<li><p>Write a recursive function <code>calculateGCD</code> that takes two positive integers <span class="math inline">\(n\)</span> and <span class="math inline">\(m\)</span> as arguments. The function should return the greatest common divisor (GCD) of these numbers using the Euclidean algorithm. Create a test case.</p></li>
 </ol>
 
 
@@ -822,13 +862,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./conditional_statements.html" class="pagination-link" aria-label="Conditional statements, conditional operator">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Conditional statements, conditional operator</span></span>
+      <a href="./loops.html" class="pagination-link" aria-label="Loops">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loops</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./debugging.html" class="pagination-link" aria-label="Debugging - basics">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Debugging - basics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Bibliography and Other Problem Sets">
+        <span class="nav-page-text">Bibliography and Other Problem Sets</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
