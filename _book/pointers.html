@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Input and Output Operations – C - exercise book</title>
+<title>8&nbsp; Pointers – C - exercise book</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -23,6 +23,41 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -33,8 +68,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./arithmeticoperators.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./function_pointers.html" rel="next">
+<link href="./functions.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -251,7 +286,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./inputoutput.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Input and Output Operations</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./pointers.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pointers</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -314,7 +349,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inputoutput.html" class="sidebar-item-text sidebar-link active">
+  <a href="./inputoutput.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Input and Output Operations</span></span></a>
   </div>
 </li>
@@ -356,7 +391,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pointers.html" class="sidebar-item-text sidebar-link">
+  <a href="./pointers.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pointers</span></span></a>
   </div>
 </li>
@@ -392,9 +427,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./inputoutput.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Input and Output Operations</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./pointers.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pointers</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Input and Output Operations</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Pointers</span></h1>
 </div>
 
 
@@ -411,21 +446,48 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>The exercises should be solved without interpreting pointers as arrays.</p>
 <ol type="1">
-<li>Write a programme that asks the user to enter a single integer, then displays it on the screen.</li>
-<li>Create a programme that reads two floating-point numbers from the user and prints their difference.</li>
-<li>Design an application that asks the user for their year of birth, then prints the previous year (one less).</li>
-<li>Write a programme that reads three integers from the user and prints their average as a floating-point value.</li>
-<li>Create a programme that asks the user to enter two letters (characters), then prints them in reverse order.</li>
-<li>Write a programme that asks the user to enter a single floating-point number, then doubles its value and prints the result.</li>
-<li>Create a programme that reads a floating-point number from the user representing an amount in dollars, then prints how much that is in euros, using a fixed exchange rate (e.g.&nbsp;1 dollar = 0.85 euros).</li>
-<li>Write a programme that displays the following text on the screen: <code>This is a quote: "I often use the C language."</code>. Ensure that the quotation marks are correctly displayed as part of the string.</li>
-<li>Create a programme that prints a Windows folder path to standard output, e.g.&nbsp;<code>C:\Program Files\MyApplication\</code> (hardcoded, without retrieving anything from the system) or <code>C:\\Program Files\\MyApplication\\</code>.</li>
-<li>Design a programme that demonstrates how to print the following text on the screen: <code>Special characters: \t (tab), \n (newline), % (percent), \\ (backslash).</code></li>
-<li>Write a programme that reads two rational numbers from standard input representing the lengths of the legs of a right-angled triangle. Then calculate and display the length of the hypotenuse.</li>
-<li>Write a programme that reads an integer from standard input and prints its absolute value to standard output.</li>
-<li>Write a programme that reads a floating-point number from standard input and prints its absolute value to standard output.</li>
-<li>Find an example and display on standard output a case where the addition of floating-point numbers is not associative.</li>
+<li>Copy or retype the code and check the output on standard output:</li>
+</ol>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">%zu\n</span><span class="st">"</span><span class="op">,</span> <span class="kw">sizeof</span><span class="op">(</span><span class="dt">int</span><span class="op">));</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">"</span><span class="sc">%zu\n</span><span class="st">"</span><span class="op">,</span> <span class="kw">sizeof</span><span class="op">(</span><span class="dt">int</span><span class="op">*));</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="2" type="1">
+<li>In a single file, perform the following tasks:</li>
+</ol>
+<ul>
+<li><p>Write a function <code>sum</code> with two arguments of type <code>int</code>. The function should return the sum of the values passed through the arguments. Create a test case.</p></li>
+<li><p>Write a function <code>sumVals</code> with two arguments that are pointers to variables of type <code>int</code>. The function should return the sum of the values pointed to by these arguments. Create a test case.</p></li>
+<li><p>Write a function <code>addPtr</code> with three arguments that are pointers to variables of type <code>int</code>. The function should be a procedure (return type <code>void</code>). The function should set the value of the variable pointed to by the third argument to the sum of the values pointed to by the first two arguments. Create a test case.</p></li>
+</ul>
+<ol start="3" type="1">
+<li><p>Write a function <code>copyInt</code> with the arguments: <code>x</code> of type <code>int</code> and <code>w</code>, which is a pointer to <code>int</code>. The function should copy the value of <code>x</code> to the variable pointed to by <code>w</code>. Create a test case.</p></li>
+<li><p>Write a function <code>findMax</code> with two arguments: a pointer <code>num1</code> to a constant value of type <code>double</code> and a constant pointer <code>num2</code> to a variable of type <code>double</code>. The function should return the greater value among those pointed to by <code>num1</code> and <code>num2</code>. Create a test case.</p></li>
+<li><p>Write a function <code>initInts</code> that takes no arguments and allocates a block of three variables of type <code>int</code>, setting their values to 5, -12, 33 respectively. The function returns a pointer to the middle variable. Create a test case in the <code>main</code> function that displays the values from the block created by the function.</p></li>
+<li><p>Write a function <code>initFloats</code> that takes no arguments and allocates a block of three variables of type <code>float</code>, setting their values to 4.5, 2.3, -4.2 respectively. The function returns a pointer to the first variable in the block. Create a test case in the <code>main</code> function that displays the values from the block created by the function.</p></li>
+<li><p>Write a function <code>initFlts</code> that takes no arguments and allocates a block of four variables of type <code>float</code>, setting their values to 0.5, 1.5, 2.5, and 3.5 respectively. The function returns a pointer to the last variable in the block. Create a test case in <code>main</code> to display the values from the block created by the function.</p></li>
+<li><p>Write a function <code>sumToPtr</code> with three arguments: two pointers to constants of type <code>int</code> and a pointer to a variable of type <code>int</code>. The function should store the sum of the constant values pointed to by the first and second arguments into the variable pointed to by the third argument. Create a test case.</p></li>
+<li><p>Write a function <code>sqrCopy</code> with two arguments: a pointer to a constant of type <code>int</code> and a pointer to a variable of type <code>int</code>. The function should copy the square of the constant’s value to the variable pointed to by the second argument. Create a test case.</p></li>
+<li><p>Write a function <code>subPtrs</code> with two arguments: a pointer <code>num1</code> to a constant value of type <code>double</code> and a constant pointer <code>num2</code> to a variable of type <code>double</code>. The function should return the difference of the values pointed to by <code>num1</code> and <code>num2</code>. Create a test case.</p></li>
+<li><p>Write a function <code>sumSqrs</code> with two arguments: a pointer <code>num1</code> to a constant value of type <code>int</code> and a constant pointer <code>num2</code> to a variable of type <code>int</code>. The function should return the sum of the squares of the values pointed to by <code>num1</code> and <code>num2</code>. Create a test case.</p></li>
+<li><p>Write a function <code>linFuncVal</code> with three arguments: a pointer <code>a</code> to a constant value of type <code>float</code>, a constant pointer <code>b</code> to a variable of type <code>float</code>, and a pointer <code>x</code> to a constant value of type <code>float</code>. The function should compute and return the value of the linear function <code>y=ax+b</code> for argument <code>x</code>, where <code>a</code> and <code>b</code> are pointed to by the corresponding pointers. Create a test case.</p></li>
+<li><p>Write a function <code>minPtr</code> with three arguments that are pointers to variables of type <code>int</code>. The function returns a pointer to the variable with the smallest value among those pointed to by the arguments. Create a test case in <code>main</code> to display the smallest value among three variables.</p></li>
+<li><p>Write a function <code>multPtrs</code> with two arguments: a pointer <code>num1</code> to a constant value of type <code>double</code> and a constant pointer <code>num2</code> to a variable of type <code>double</code>. The function returns the product of the values pointed to by these pointers. Create a test case.</p></li>
+<li><p>Write a function <code>absVal</code> with one argument, which is a pointer to a variable of type <code>int</code>. The function computes the absolute value of the variable pointed to by the pointer and updates that variable. Create a test case in <code>main</code> to display the value of the updated variable.</p></li>
+<li><p>Write a function <code>swap</code> with two arguments: a pointer <code>ptr1</code> to a variable of type <code>int</code> and a pointer <code>ptr2</code> to another variable of the same type. The function swaps the values pointed to by the pointers. Create a test case.</p></li>
+<li><p>Write a function <code>swapSign</code> with two arguments: a pointer <code>ptr1</code> to a variable of type <code>double</code> and a pointer <code>ptr2</code> to another variable of the same type. The function swaps the values pointed to by the pointers if they have different signs. Otherwise, it does nothing. Create a test case.</p></li>
+<li><p>Write a function <code>swapIfGreater</code> that has two arguments. The first argument is a pointer <code>ptr1</code> to a variable of type <code>int</code>, and the second argument is a pointer <code>ptr2</code> to a variable of type <code>int</code>. The function should swap the values pointed to by these pointers, but only if the value pointed to by the first pointer is greater than the value pointed to by the second pointer. The function does not return any value. Create a test case for the function.</p></li>
+<li><p>Write a function <code>swapMaxMiddle</code> that takes three pointers to variables of type <code>int</code> as arguments. The function should swap the values of the largest and the middle (in terms of value in non-decreasing order) variables pointed to by the pointers. Create a test case in <code>main</code> to display the values of the variables before and after the swap on the console.</p></li>
+<li><p>Write a function <code>swapFirstPositive</code> that takes three pointers to variables of type <code>int</code> as arguments. The function should swap the values of the first and the first positive variable among those pointed to by the pointers. If there is no positive variable, the function should not make any changes. Create a test case in <code>main</code> to display the values of the variables before and after the swap on the console.</p></li>
+<li><p>Write a function <code>swapOddEven</code> that takes four pointers to variables of type <code>int</code> as arguments. The function should swap the values of the variables so that all even values are at the beginning and odd values are at the end (the order within groups does not matter). Create a test case in <code>main</code> to display the values of the variables before and after the swap on the console.</p></li>
+<li><p>Write a function <code>modifyThroughPtr</code> with two arguments: a pointer to a variable of type <code>int</code> and a value of type <code>int</code>. The function should perform the following operations: if the second value is positive — increase the value of the variable pointed to by the first argument by that value; if the second value is negative — decrease the value of the first variable by the absolute value of the second argument; and if the second value is 0 — do not change the value. The function returns the address of the modified variable. Create a test case.</p></li>
 </ol>
 
 
@@ -846,13 +908,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="C - exercise book">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">C - exercise book</span>
+      <a href="./functions.html" class="pagination-link" aria-label="Functions">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Functions</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./arithmeticoperators.html" class="pagination-link" aria-label="Arithmetic Operators">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Arithmetic Operators</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./function_pointers.html" class="pagination-link" aria-label="Function Pointers">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Function Pointers</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

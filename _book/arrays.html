@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Debugging - basics – C - exercise book</title>
+<title>10&nbsp; One-Dimensional Arrays – C - exercise book</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -68,8 +68,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./loops.html" rel="next">
-<link href="./bitwise_operators.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./function_pointers.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -112,6 +112,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -286,7 +315,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./debugging.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Debugging - basics</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./arrays.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">One-Dimensional Arrays</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -373,7 +402,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./debugging.html" class="sidebar-item-text sidebar-link active">
+  <a href="./debugging.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Debugging - basics</span></span></a>
   </div>
 </li>
@@ -403,7 +432,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./arrays.html" class="sidebar-item-text sidebar-link">
+  <a href="./arrays.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">One-Dimensional Arrays</span></span></a>
   </div>
 </li>
@@ -427,9 +456,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./debugging.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Debugging - basics</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./arrays.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">One-Dimensional Arrays</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Debugging - basics</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">One-Dimensional Arrays</span></h1>
 </div>
 
 
@@ -446,124 +475,109 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<p>The exercises should be solved without converting numbers to strings. In the exercises, do not use double pointers or equivalents of multi-dimensional arrays — the syntax should use a single dimension only. In the exercises, do not consider an array of size zero, as size-related arguments are positive.</p>
 <ol type="1">
-<li>Below is code written in C. Some lines contain comments. Your task is to fill in the values of the corresponding variables after each line of code is executed. Adding new lines or disrupting the code structure means the task was done incorrectly.</li>
+<li><p>Write a function <code>findMaxValue</code> that takes as arguments an integer array <code>numbers</code> and its size <code>size</code> (a positive integer). The function should search the array and display the maximum value found in it. Create a test case.</p></li>
+<li><p>Write a function <code>average</code> whose arguments are a positive integer <span class="math inline">\(n\)</span> and an <span class="math inline">\(n\)</span>-element array <code>tab</code> of elements of type <code>int</code>, and returns the arithmetic mean as a floating-point number. Create a test case.</p></li>
+<li><p>Write a function <code>sumSquares</code> whose arguments are a positive integer <span class="math inline">\(n\)</span> and an <span class="math inline">\(n\)</span>-element array <code>tab</code> of elements of type <code>int</code>, and returns the sum of squares of the array elements. Create a test case.</p></li>
+<li><p>Write a function <code>copyArr</code> that takes three arguments: a positive integer <code>n</code> and two <code>n</code>-element arrays <code>tab1</code>, <code>tab2</code> of elements of type int, and copies the elements of array <code>tab1</code> to array <code>tab2</code> in order. Create a test case.</p></li>
+<li><p>Write a function <code>revCopy</code> that takes three arguments: a positive integer <code>n</code> and two <code>n</code>-element arrays <code>tab1</code>, <code>tab2</code> of elements of type int, and copies the elements of array <code>tab1</code> to array <code>tab2</code> in reverse order. Create a test case.</p></li>
+<li><p>Write a function <code>reverseArr</code> whose arguments are a positive integer <code>n</code> representing the array size and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should reverse the order of elements in the array <code>tab</code> directly in place, without using an additional array to store results. Create a test case.</p></li>
+<li><p>Write a function <code>maxValue</code> whose arguments are a positive integer <code>n</code> representing the array size and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should search the array and return the largest value found in it. Assume the array is not empty. Create a test case.</p></li>
+<li><p>Write a function <code>minValue</code> whose arguments are a positive integer <code>n</code> representing the array size and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should search the array and return the smallest value found in it. Assume the array is not empty. Create a test case.</p></li>
+<li><p>Write a function <code>maxIdx</code> whose arguments are a positive integer <code>n</code> representing the array size and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should find and return the index of the largest element in the array. If more than one element has the maximum value, the function should return the index of the first one (i.e., the smallest possible index). Assume the array is not empty. Create a test case.</p></li>
+<li><p>Write a function <code>minIdxMax</code> whose arguments are a positive integer <code>n</code> representing the array size and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should search the array and return the index of the smallest element in the array. If there are multiple identical smallest elements, return the largest possible index among them. Assume the array is not empty. Create a test case.</p></li>
+<li><p>Write a function <code>shiftLeft</code> whose arguments are a positive integer <code>n</code> representing the array size and an <code>n</code>-element array <code>tab</code> of elements of type <code>float</code>. The function should shift all elements of the array one position to the left, and the last element in the array should be replaced by the first element of the original array. Assume the array is not empty. Create a test case.</p></li>
+<li><p>Write a function <code>shiftRight2</code> whose arguments are a positive integer <code>n</code> representing the array size and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should shift all elements of the array two positions to the right. Elements that “fall off” the end of the array should appear at its beginning in the same order. Create a test case.</p></li>
+<li><p>Write a function <code>shiftLeft</code> whose arguments are a positive integer <code>n</code> representing the array size and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should return a pointer to a newly created dynamic array in which all elements have been shifted one position to the left relative to the original array, and the last element of the new array equals the first element of the original array. Create a test case.</p></li>
+<li><p>Write a function <code>shiftRight</code> whose arguments are a positive integer <code>n</code> representing the array size and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should return a pointer to a newly created dynamic array in which all elements have been shifted one position to the right relative to the original array, and the first element of the new array equals the last element of the original array. Create a test case.</p></li>
+<li><p>Below is code in the C language. Some lines contain comments. Your task is to fill in the values of the corresponding variables after each specific line of code is executed. Adding new lines or disrupting the code structure means incorrect completion of the task.</p></li>
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> <span class="co">// a = , b =</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> b <span class="op">=</span> <span class="dv">5</span><span class="op">;</span>  <span class="co">// a = , b =</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> a <span class="op">+</span> b<span class="op">;</span>  <span class="co">// a = , b =</span></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> a <span class="op">-</span> b<span class="op">;</span>  <span class="co">// a = , b =</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> a <span class="op">-</span> b<span class="op">;</span>  <span class="co">// a = , b =</span></span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> a <span class="op">*</span> b<span class="op">;</span>  <span class="co">// a = , b =</span></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> b <span class="op">/</span> a<span class="op">;</span>  <span class="co">// a = , b =</span></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> a <span class="op">&lt;&lt;</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// a = , b =</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> b <span class="op">&gt;&gt;</span> <span class="dv">1</span><span class="op">;</span> <span class="co">// a = , b =</span></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> a <span class="op">&amp;</span> b<span class="op">;</span>  <span class="co">// a = , b =</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> a <span class="op">^</span> b<span class="op">;</span>  <span class="co">// a = , b =</span></span>
-<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="op">~</span>a<span class="op">;</span>     <span class="co">// a = , b =</span></span>
-<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="2" type="1">
-<li>Below is code written in C. Some lines contain comments. Your task is to fill in the values of the corresponding variables after each line of code is executed. Adding new lines or disrupting the code structure means the task was done incorrectly.</li>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> foo<span class="op">(</span><span class="dt">int</span><span class="op">*</span>a<span class="op">,</span><span class="dt">int</span><span class="op">*</span>b<span class="op">)</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">*</span>a<span class="op">-*</span>b<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> tab<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">3</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">3</span><span class="op">,-</span><span class="dv">4</span><span class="op">,-</span><span class="dv">4</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">1</span><span class="op">};</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="op">*</span>wsk<span class="op">=</span>tab<span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> b <span class="op">=</span> <span class="op">*(</span>wsk<span class="op">+=</span><span class="dv">4</span><span class="op">);</span> <span class="co">//b=</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> c <span class="op">=</span> b<span class="op">+</span><span class="dv">3</span><span class="op">;</span> <span class="co">// b=  , c=</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> d <span class="op">=</span> foo<span class="op">(&amp;</span>b<span class="op">,&amp;</span>c<span class="op">);</span> <span class="co">// b=  , c=  , d=</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> e <span class="op">=</span> <span class="op">(</span>wsk<span class="op">+=-</span><span class="dv">1</span><span class="op">)[</span><span class="dv">4</span><span class="op">];</span> <span class="co">// b=  , c=  , d=  , e=</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>    e <span class="op">=</span> <span class="op">(</span>d <span class="op">*=</span> <span class="dv">2</span><span class="op">)</span> <span class="op">+</span> <span class="op">(</span>c <span class="op">+=</span> <span class="dv">2</span><span class="op">);</span> <span class="co">// b=  , c=  , d=  , e=</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> d <span class="op">+</span> <span class="op">(</span>b<span class="op">+=</span><span class="dv">4</span><span class="op">);</span> <span class="co">// b=  , c=  , d=  , e=</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>    e<span class="op">=</span> <span class="op">(--</span>c<span class="op">)-(</span>d<span class="op">++);</span>  <span class="co">// b=  , c=  , d=  , e=</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="op">*</span>wsk <span class="op">+</span> e<span class="op">;</span> <span class="co">// b=  , c=  , d=  , e=</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="16" type="1">
+<li>Below is code in the C language. Some lines contain comments. Your task is to fill in the values of the corresponding variables after each specific line of code is executed. Adding new lines or disrupting the code structure means incorrect completion of the task.</li>
 </ol>
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> a <span class="op">=</span> <span class="dv">10</span><span class="op">;</span> <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> b <span class="op">=</span> <span class="dv">5</span><span class="op">;</span>  <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> c <span class="op">=</span> <span class="dv">0</span><span class="op">;</span>  <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> a <span class="op">+</span> b<span class="op">;</span>  <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> a <span class="op">-</span> b<span class="op">;</span>  <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> a <span class="op">-</span> b<span class="op">;</span>  <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a<span class="op">;</span>      <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> b <span class="op">*</span> c<span class="op">;</span>  <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> a <span class="op">/</span> c<span class="op">;</span>  <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> b <span class="op">&lt;&lt;</span> <span class="dv">2</span><span class="op">;</span> <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> c <span class="op">&gt;&gt;</span> <span class="dv">1</span><span class="op">;</span> <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> b <span class="op">&amp;</span> c<span class="op">;</span>  <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a <span class="op">^</span> b<span class="op">;</span>  <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="op">~</span>c<span class="op">;</span>     <span class="co">// a = , b = , c =</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="3" type="1">
-<li>Below is code written in C. Some lines contain comments. Your task is to fill in the values of the corresponding variables after each line of code is executed. Adding new lines or disrupting the code structure means the task was done incorrectly.</li>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdlib.h&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> foo<span class="op">(</span><span class="dt">int</span><span class="op">*</span>a<span class="op">,</span><span class="dt">int</span><span class="op">*</span>b<span class="op">)</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="op">*</span>a<span class="op">-*</span>b<span class="op">;</span></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> tab<span class="op">[]</span> <span class="op">=</span> <span class="op">{</span><span class="dv">1</span><span class="op">,</span><span class="dv">5</span><span class="op">,</span><span class="dv">5</span><span class="op">,</span><span class="dv">2</span><span class="op">,</span><span class="dv">3</span><span class="op">,</span><span class="dv">3</span><span class="op">,-</span><span class="dv">4</span><span class="op">,-</span><span class="dv">4</span><span class="op">,</span><span class="dv">0</span><span class="op">,</span><span class="dv">1</span><span class="op">};</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> <span class="op">*</span>wsk<span class="op">=</span>tab<span class="op">-</span><span class="dv">1</span><span class="op">;</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> b <span class="op">=</span> <span class="op">*(</span>wsk<span class="op">+=</span><span class="dv">4</span><span class="op">);</span> <span class="co">//b=</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> c <span class="op">=</span> b<span class="op">+</span><span class="dv">3</span><span class="op">;</span> <span class="co">// b=  , c=</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> d <span class="op">=</span> foo<span class="op">(&amp;</span>b<span class="op">,&amp;</span>c<span class="op">);</span> <span class="co">// b=  , c=  , d=</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> e <span class="op">=</span> <span class="op">(</span>wsk<span class="op">+=-</span><span class="dv">1</span><span class="op">)[</span><span class="dv">4</span><span class="op">];</span> <span class="co">// b=  , c=  , d=  , e=</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>    e <span class="op">=</span> <span class="op">(</span>d <span class="op">-=</span> <span class="dv">2</span><span class="op">)</span> <span class="op">-</span> <span class="op">(</span>c <span class="op">+=</span> <span class="dv">2</span><span class="op">);</span> <span class="co">// b=  , c=  , d=  , e=</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> d <span class="op">+</span> <span class="op">(</span>b<span class="op">+=</span><span class="dv">4</span><span class="op">);</span> <span class="co">// b=  , c=  , d=  , e=</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>    e<span class="op">=</span> <span class="op">(--</span>c<span class="op">)-(</span>d<span class="op">++);</span>  <span class="co">// b=  , c=  , d=  , e=</span></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> <span class="op">*</span>wsk <span class="op">+</span> e<span class="op">;</span> <span class="co">// b=  , c=  , d=  , e=</span></span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+<ol start="17" type="1">
+<li><p>Write a function called <code>findElement</code> that takes as arguments an integer array, the array size, an integer <code>val</code> to find, and a pointer to a function <code>isEqual</code>. The function <code>isEqual</code> takes two integers as arguments and returns a value of type 0 or 1, indicating whether the numbers are equal, respectively. The function <code>findElement</code> should search the array to find the value <code>val</code> according to the rules defined by the function <code>isEqual</code>, and then return the index of that element in the array (the first one encountered) or <code>-1</code> if the element does not exist. Create a test case for the function <code>findElement</code>.</p></li>
+<li><p>Write a function <code>findWithCondition</code> that takes as arguments an integer array, the array size, and a pointer to a function <code>condition</code>. The function <code>condition</code> takes an integer as an argument and returns a value of type 0 or 1, indicating whether the number satisfies a specified condition. The function <code>findWithCondition</code> should search the array to find the last number satisfying the condition defined by the function <code>condition</code>, and then return the index of that element in the array or <code>-1</code> if no such element exists. Create a test case for the function <code>findWithCondition</code>.</p></li>
+<li><p>Write a function <code>isSymmetric</code> that takes two arguments: a positive integer <span class="math inline">\(n\)</span> and an <span class="math inline">\(n\)</span>-element array <code>tab</code> of elements of type <code>int</code>. The function should return the value <code>1</code> if the array <code>tab</code> is symmetric (i.e., the first element equals the last, the next equals the second-to-last, etc.) and return zero otherwise. Create a test case for the function.</p></li>
+<li><p>Write a function <code>areArraysEqual</code> that takes three arguments: a positive integer <span class="math inline">\(n\)</span> and two <span class="math inline">\(n\)</span>-element arrays <code>tab1</code> and <code>tab2</code> of elements of type <code>int</code>. The function should check whether both arrays are identical. If so, the function should return 1; otherwise, return 0. Create a test case for the function.</p></li>
+<li><p>Write a function <code>indexOfMaxAbs</code> that takes two arguments: a positive integer <span class="math inline">\(n\)</span> and an <span class="math inline">\(n\)</span>-element array <code>tab</code> of elements of type <code>int</code>, and returns the index of the first occurrence of the largest absolute value among the elements stored in array <code>tab</code>. Create a test case for the function.</p></li>
+<li><p>Write a function <code>rotateLeftByTwo</code> that takes two arguments: a positive integer <code>n</code> (<span class="math inline">\(n&gt;3\)</span>) and an <code>n</code>-element array <code>tab</code> of elements of type <code>double</code>, and shifts all elements of the array two positions to the left (so that the value of the element at index <code>n-1</code> ends up at index <code>n-3</code>, the value at index <code>n-2</code> ends up at index <code>n-4</code>, while the value at index <code>0</code> goes to index <code>n-2</code>, and the value at index <code>1</code> goes to index <code>n-1</code>). Create a test case for the function.</p></li>
+<li><p>Write a function <code>multiplyElementwise</code> that takes four arguments: a positive integer <code>n</code>, <code>n</code>-element arrays <code>tab1</code> and <code>tab2</code>, and an <code>n</code>-element array <code>tab3</code> of elements of type <code>double</code>. The function should compute the product of the elements of arrays <code>tab1</code> and <code>tab2</code> at the same indices and store the results in array <code>tab3</code>. Create a test case for the function.</p></li>
+<li><p>Write a function <code>sumOddIndices</code> that takes two arguments: a positive integer <span class="math inline">\(n\)</span> and an <span class="math inline">\(n\)</span>-element array <code>tab</code> of elements of type <code>int</code>. The function should return the sum of the elements located at odd indices. Create a test case.</p></li>
+<li><p>Write a function <code>countPositiveElements</code> that takes two arguments: a positive integer <span class="math inline">\(n\)</span> and an <span class="math inline">\(n\)</span>-element array <code>tab</code> of elements of type <code>int</code>. The function should return the number of positive elements in the array. Create a test case.</p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> x <span class="op">=</span> <span class="dv">7</span><span class="op">;</span>    <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> y <span class="op">=</span> <span class="dv">3</span><span class="op">;</span>    <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> z <span class="op">=</span> <span class="dv">12</span><span class="op">;</span>   <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> x <span class="op">*</span> <span class="dv">2</span><span class="op">;</span>    <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> y <span class="op">+</span> x<span class="op">;</span>    <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> z <span class="op">-</span> y<span class="op">;</span>    <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> z <span class="op">/</span> <span class="dv">2</span><span class="op">;</span>    <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> x <span class="op">%</span> <span class="dv">3</span><span class="op">;</span>    <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> x <span class="op">+</span> y<span class="op">;</span>    <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> z<span class="op">++;</span>      <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> <span class="op">++</span>x<span class="op">;</span>      <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a>    z <span class="op">=</span> y<span class="op">--;</span>      <span class="co">// x = , y = , z = </span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="4" type="1">
-<li>Below is code written in C. Some lines contain comments. Your task is to fill in the values of the corresponding variables after each line of code is executed. Adding new lines or disrupting the code structure means the task was done incorrectly.</li>
+<p>Example. For an array containing the elements 3,-4,5 the function should return 2.</p>
+<ol start="26" type="1">
+<li><p>Write a function <code>doubleOddElements</code> that takes two arguments: a positive integer <span class="math inline">\(n\)</span> and an <span class="math inline">\(n\)</span>-element array <code>tab</code> of elements of type <code>int</code>. The function should double the odd-valued elements in the array. Create a test case.</p></li>
+<li><p>Write a function <code>increaseByIndex</code> that takes two arguments: a positive integer <span class="math inline">\(n\)</span> and an <span class="math inline">\(n\)</span>-element array <code>tab</code> of elements of type <code>int</code>. The function should increase the value of each array element by its index. Create a test case.</p></li>
+<li><p>Write a function <code>multiplyElementwise</code> that takes four arguments: a positive integer <code>n</code>, <code>n</code>-element arrays <code>tab1</code> and <code>tab2</code>, and an <code>n</code>-element array <code>tab3</code> of elements of type <code>double</code>. The function should compute the product of the elements of arrays <code>tab1</code> and <code>tab2</code> at the same indices and store the results in array <code>tab3</code>. Create a test case for the function.</p></li>
+<li><p>Write a function <code>sumAboveThreshold</code> that takes three arguments: an integer <code>k</code>, a positive integer <code>n</code>, and an <code>n</code>-element array <code>arr</code> of elements of type <code>int</code>. The function should return the sum of all elements of array <code>arr</code> that are greater than the number <code>k</code>. Create two test cases. Example: for <code>k=10</code>, <code>n=6</code> and the array <code>4,12,3,15,8,25</code> the function should return 52.</p></li>
+<li><p>Write a function <code>findFirstDivisibleIndex</code> that takes three arguments: a positive integer <code>p</code>, a positive integer <code>n</code>, and an <code>n</code>-element array <code>numbers</code> of elements of type <code>int</code>. The function should return the index of the first occurrence of a number divisible by <code>p</code> in the array <code>numbers</code>. If no element is divisible by <code>p</code>, the function should return -1. Create two test cases. Example: for <code>p=3</code>, <code>n=7</code> and the array <code>5,11,9,2,4,7,6</code> the function should return 2.</p></li>
+<li><p>Write a function <code>countInRange</code> that takes three arguments: an integer <code>a</code>, an integer <code>b</code>, a positive integer <code>n</code>, and an <code>n</code>-element array <code>data</code> of elements of type <code>int</code>. The function should count how many elements of array <code>data</code> fall within the interval <code>[a,b]</code> (including <code>a</code> and <code>b</code>). Create two test cases. Example: for <code>a=5</code>, <code>b=15</code>, <code>n=8</code> and the array <code>3,7,22,10,5,18,9,4</code> the function should return 4.</p></li>
+<li><p>Write a function <code>sumDivisibleBy3</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should return the sum of elements divisible by 3, and zero if there are no such elements. Create a test case. Example: for the array <code>7,9,2,6,5</code> the function should return 15.</p></li>
+<li><p>Write a function <code>productEven</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should return the product of even-valued elements, and 1 if there are no such elements. Create a test case. Example: for the array <code>3,4,5,2,7</code> the function should return 8.</p></li>
+<li><p>Write a function <code>countNegInd</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should return the count of negative elements that are located at even indices of the array. If there are no such elements, the function should return 0. Create a test case. Example: for the array <code>-2,4,-5,-7,6</code> the function should return 2.</p></li>
+<li><p>Write a function <code>minArrays</code> that takes four arguments: a positive integer <code>n</code>, <code>n</code>-element arrays <code>tabA</code>, <code>tabB</code>, and <code>tabC</code> of elements of type <code>int</code>. The function should select the minimum value from the elements of arrays <code>tabA</code> and <code>tabB</code> at the same indices and store the results in array <code>tabC</code>. Create a test case. Example: <code>tabA</code> = {7,-2,14}, <code>tabB</code> = {9,6,-3} → <code>tabC</code> = {7,-2,-3}.</p></li>
+<li><p>Write a function <code>sumArrays</code> that takes four arguments: a positive integer <code>m</code>, <code>m</code>-element arrays <code>array1</code>, <code>array2</code>, and <code>arrayResult</code> of elements of type <code>double</code>. The function should sum the corresponding elements of arrays <code>array1</code> and <code>array2</code>, and then store the results in array <code>arrayResult</code>. Create a test case.</p></li>
+<li><p>Write a function <code>sumOdd</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should return the sum of odd-valued elements, and 0 if there are no such elements. Create a test case. Example: for the array <code>2,7,4,9,3</code> the function should return 19.</p></li>
+<li><p>Write a function <code>multiplyByPosition</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function modifies the array by multiplying each element by its index plus 1 (the element at index 0 is multiplied by 1, the element at index 1 by 2, etc.). Create a test case. Example: array <code>{2,3,4}</code> → <code>{2,6,12}</code>.</p></li>
+<li><p>Write a function <code>decreaseBySquare</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should decrease the value of each array element by the square of its index. Create a test case. Example: array <code>{5,10,15,20}</code> → <code>{5,9,11,11}</code>.</p></li>
+<li><p>Write a function <code>replaceWithPower</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should replace the value of each array element with that element raised to the power equal to its index. For index 0, the element remains unchanged. Create a test case. Example: array <code>{2,3,4,-3,-2}</code> → <code>{2,3,16,-27,16}</code>.</p></li>
+<li><p>Write a function <code>sumOddIndex</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should return the sum of elements at odd positions, and zero if there are no such elements. Create a test case. Example: for the array <code>3,-4,5,7,3</code> the function should return 3, because at odd indices there are -4 and 7.</p></li>
+<li><p>Write a function <code>countMatching</code> that takes as arguments an integer array, the array size, and a pointer to a function <code>predicate</code>. The function <code>predicate</code> takes an integer as an argument and returns a value of 0 or 1, indicating whether the number satisfies a specified condition. The function <code>countMatching</code> should count and return the number of elements in the array that satisfy the condition. Create a test case. Example: for a function f(x)=1 for even numbers, f(x)=0 for odd numbers, and the array <code>{2,7,8,3,10}</code> the function should return 3.</p></li>
+<li><p>Write a function <code>productPositive</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should return the product of all positive elements in the array. If the array contains no positive elements, the function should return 1. Create a test case. Example: for the array <code>{3,-2,5,0,-1,4}</code> the function should return 60.</p></li>
+<li><p>Write a function <code>countDivisible</code> that takes three arguments: a positive integer <code>n</code>, an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>, and a positive integer <code>divisor</code>. The function should return the count of array elements that are divisible by <code>divisor</code>. Create a test case. Example: for the array <code>{12,7,-9,15,4,21}</code> and <code>divisor=3</code> the function should return 4.</p></li>
+<li><p>Write a function <code>replaceWithFactorial</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should replace the value of each array element with the factorial of the absolute value of that element. For values greater than 12, the element should be replaced with the value -1. Create a test case. Example: array <code>{3,-4,0,5,15}</code> → <code>{6,24,1,120,-1}</code>.</p></li>
+<li><p>Write a function <code>getMaximumValue</code> that takes as arguments a non-empty integer array, the array size, and a pointer to a function <code>isValid</code>. The function <code>isValid</code> takes an integer and returns 0 or 1. The function <code>getMaximumValue</code> should find the largest value among the array elements that satisfy the condition and return it. If no element satisfies the condition, the function should return 0. Create a test case. Example: for f(x)=1 when x%3==0 and the array <code>{7,9,4,12,6}</code> the function should return 12.</p></li>
+<li><p>Write a function <code>sumOfDivisors</code> that takes two arguments: a positive integer <code>n</code> and an <code>n</code>-element array <code>tab</code> of elements of type <code>int</code>. The function should replace the value of each array element with the sum of all positive divisors of the absolute value of that element (including the number itself). Create a test case. Example: array <code>{6,-12,1,7,-8}</code> → <code>{12,28,1,8,15}</code>.</p></li>
+<li><p>Write a function <code>sumEvenIndices</code> that takes two arguments: a positive integer <span class="math inline">\(n\)</span> and an <span class="math inline">\(n\)</span>-element array <code>tab</code> of elements of type <code>int</code>. The function should return the sum of elements located at even index positions (0, 2, 4, …). Create a test case. Example: for the array <code>{10,3,7,-2,5,8}</code> the function should return 22.</p></li>
+<li><p>Write a function <code>multiplyByDigitSum</code> that takes two arguments: a positive integer <span class="math inline">\(n\)</span> and an <span class="math inline">\(n\)</span>-element array <code>tab</code> of elements of type <code>int</code>. The function should replace the value of each array element with the product of that value and the sum of the digits of the absolute value of that element. Create a test case. Example: array <code>{12,-34,5,100,-7}</code> → <code>{36,-238,25,100,-49}</code>.</p></li>
 </ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> p <span class="op">=</span> <span class="dv">15</span><span class="op">;</span>   <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> q <span class="op">=</span> <span class="dv">6</span><span class="op">;</span>    <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> r <span class="op">=</span> <span class="dv">1</span><span class="op">;</span>    <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> p <span class="op">|</span> q<span class="op">;</span>    <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> p <span class="op">&amp;</span> <span class="dv">10</span><span class="op">;</span>   <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> r <span class="op">&lt;&lt;</span> <span class="dv">3</span><span class="op">;</span>   <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> p <span class="op">^</span> r<span class="op">;</span>    <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> q <span class="op">&gt;&gt;</span> <span class="dv">1</span><span class="op">;</span>   <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> <span class="op">~</span>p<span class="op">;</span>       <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>    p <span class="op">=</span> q <span class="op">|</span> r<span class="op">;</span>    <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>    q <span class="op">=</span> p <span class="op">&amp;</span> r<span class="op">;</span>    <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a>    r <span class="op">=</span> r <span class="op">^</span> q<span class="op">;</span>    <span class="co">// p = , q = , r = </span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="5" type="1">
-<li>Below is code written in C. Some lines contain comments. Your task is to fill in the values of the corresponding variables after each line of code is executed. Adding new lines or disrupting the code structure means the task was done incorrectly.</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">float</span> a <span class="op">=</span> <span class="fl">10.5</span><span class="op">;</span>  <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">float</span> b <span class="op">=</span> <span class="fl">2.0</span><span class="op">;</span>   <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">float</span> c <span class="op">=</span> <span class="fl">0.5</span><span class="op">;</span>   <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> a <span class="op">/</span> b<span class="op">;</span>       <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> b <span class="op">*</span> <span class="dv">3</span><span class="op">;</span>       <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a <span class="op">+</span> b<span class="op">;</span>       <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> c <span class="op">-</span> a<span class="op">;</span>       <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> b <span class="op">/</span> <span class="dv">2</span><span class="op">;</span>       <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a <span class="op">*</span> b<span class="op">;</span>       <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> c <span class="op">+</span> <span class="fl">0.5</span><span class="op">;</span>     <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>    b <span class="op">=</span> a <span class="op">-</span> c<span class="op">;</span>       <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    c <span class="op">=</span> a <span class="op">/</span> b<span class="op">;</span>       <span class="co">// a = , b = , c = </span></span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ol start="6" type="1">
-<li>Below is code written in C. Some lines contain comments. Your task is to fill in the values of the corresponding variables after each line of code is executed. Adding new lines or disrupting the code structure means the task was done incorrectly.</li>
-</ol>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> m <span class="op">=</span> <span class="dv">20</span><span class="op">;</span>   <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> n <span class="op">=</span> <span class="dv">4</span><span class="op">;</span>    <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>    <span class="dt">int</span> k <span class="op">=</span> <span class="dv">2</span><span class="op">;</span>    <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    m <span class="op">+=</span> n<span class="op">;</span>       <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>    n <span class="op">-=</span> k<span class="op">;</span>       <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>    k <span class="op">*=</span> <span class="dv">3</span><span class="op">;</span>       <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>    m <span class="op">/=</span> <span class="dv">2</span><span class="op">;</span>       <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>    n <span class="op">+=</span> m<span class="op">;</span>       <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>    k <span class="op">%=</span> n<span class="op">;</span>       <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a>    m <span class="op">&lt;&lt;=</span> <span class="dv">1</span><span class="op">;</span>      <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a>    n <span class="op">&gt;&gt;=</span> <span class="dv">2</span><span class="op">;</span>      <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a>    k <span class="op">^=</span> m<span class="op">;</span>       <span class="co">// m = , n = , k = </span></span>
-<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 
 
 
@@ -983,13 +997,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./bitwise_operators.html" class="pagination-link" aria-label="Bitwise operators">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Bitwise operators</span></span>
+      <a href="./function_pointers.html" class="pagination-link" aria-label="Function Pointers">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Function Pointers</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./loops.html" class="pagination-link" aria-label="Loops">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loops</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Bibliography and Other Problem Sets">
+        <span class="nav-page-text">Bibliography and Other Problem Sets</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

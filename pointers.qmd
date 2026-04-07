@@ -1,0 +1,65 @@
+# Pointers
+
+The exercises should be solved without interpreting pointers as arrays.
+
+1.  Copy or retype the code and check the output on standard output:
+
+``` c
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+    printf("%zu\n", sizeof(int));
+    printf("%zu\n", sizeof(int*));
+    return 0;
+}
+```
+
+2.  In a single file, perform the following tasks:
+
+-   Write a function `sum` with two arguments of type `int`. The function should return the sum of the values passed through the arguments. Create a test case.
+
+-   Write a function `sumVals` with two arguments that are pointers to variables of type `int`. The function should return the sum of the values pointed to by these arguments. Create a test case.
+
+-   Write a function `addPtr` with three arguments that are pointers to variables of type `int`. The function should be a procedure (return type `void`). The function should set the value of the variable pointed to by the third argument to the sum of the values pointed to by the first two arguments. Create a test case.
+
+3.  Write a function `copyInt` with the arguments: `x` of type `int` and `w`, which is a pointer to `int`. The function should copy the value of `x` to the variable pointed to by `w`. Create a test case.
+
+4.  Write a function `findMax` with two arguments: a pointer `num1` to a constant value of type `double` and a constant pointer `num2` to a variable of type `double`. The function should return the greater value among those pointed to by `num1` and `num2`. Create a test case.
+
+5.  Write a function `initInts` that takes no arguments and allocates a block of three variables of type `int`, setting their values to 5, -12, 33 respectively. The function returns a pointer to the middle variable. Create a test case in the `main` function that displays the values from the block created by the function.
+
+6.  Write a function `initFloats` that takes no arguments and allocates a block of three variables of type `float`, setting their values to 4.5, 2.3, -4.2 respectively. The function returns a pointer to the first variable in the block. Create a test case in the `main` function that displays the values from the block created by the function.
+
+7.  Write a function `initFlts` that takes no arguments and allocates a block of four variables of type `float`, setting their values to 0.5, 1.5, 2.5, and 3.5 respectively. The function returns a pointer to the last variable in the block. Create a test case in `main` to display the values from the block created by the function.
+
+8.  Write a function `sumToPtr` with three arguments: two pointers to constants of type `int` and a pointer to a variable of type `int`. The function should store the sum of the constant values pointed to by the first and second arguments into the variable pointed to by the third argument. Create a test case.
+
+9.  Write a function `sqrCopy` with two arguments: a pointer to a constant of type `int` and a pointer to a variable of type `int`. The function should copy the square of the constant's value to the variable pointed to by the second argument. Create a test case.
+
+10. Write a function `subPtrs` with two arguments: a pointer `num1` to a constant value of type `double` and a constant pointer `num2` to a variable of type `double`. The function should return the difference of the values pointed to by `num1` and `num2`. Create a test case.
+
+11. Write a function `sumSqrs` with two arguments: a pointer `num1` to a constant value of type `int` and a constant pointer `num2` to a variable of type `int`. The function should return the sum of the squares of the values pointed to by `num1` and `num2`. Create a test case.
+
+12. Write a function `linFuncVal` with three arguments: a pointer `a` to a constant value of type `float`, a constant pointer `b` to a variable of type `float`, and a pointer `x` to a constant value of type `float`. The function should compute and return the value of the linear function `y=ax+b` for argument `x`, where `a` and `b` are pointed to by the corresponding pointers. Create a test case.
+
+13. Write a function `minPtr` with three arguments that are pointers to variables of type `int`. The function returns a pointer to the variable with the smallest value among those pointed to by the arguments. Create a test case in `main` to display the smallest value among three variables.
+
+14. Write a function `multPtrs` with two arguments: a pointer `num1` to a constant value of type `double` and a constant pointer `num2` to a variable of type `double`. The function returns the product of the values pointed to by these pointers. Create a test case.
+
+15. Write a function `absVal` with one argument, which is a pointer to a variable of type `int`. The function computes the absolute value of the variable pointed to by the pointer and updates that variable. Create a test case in `main` to display the value of the updated variable.
+
+16. Write a function `swap` with two arguments: a pointer `ptr1` to a variable of type `int` and a pointer `ptr2` to another variable of the same type. The function swaps the values pointed to by the pointers. Create a test case.
+
+17. Write a function `swapSign` with two arguments: a pointer `ptr1` to a variable of type `double` and a pointer `ptr2` to another variable of the same type. The function swaps the values pointed to by the pointers if they have different signs. Otherwise, it does nothing. Create a test case.
+
+18. Write a function `swapIfGreater` that has two arguments. The first argument is a pointer `ptr1` to a variable of type `int`, and the second argument is a pointer `ptr2` to a variable of type `int`. The function should swap the values pointed to by these pointers, but only if the value pointed to by the first pointer is greater than the value pointed to by the second pointer. The function does not return any value. Create a test case for the function.
+
+19. Write a function `swapMaxMiddle` that takes three pointers to variables of type `int` as arguments. The function should swap the values of the largest and the middle (in terms of value in non-decreasing order) variables pointed to by the pointers. Create a test case in `main` to display the values of the variables before and after the swap on the console.
+
+20. Write a function `swapFirstPositive` that takes three pointers to variables of type `int` as arguments. The function should swap the values of the first and the first positive variable among those pointed to by the pointers. If there is no positive variable, the function should not make any changes. Create a test case in `main` to display the values of the variables before and after the swap on the console.
+
+21. Write a function `swapOddEven` that takes four pointers to variables of type `int` as arguments. The function should swap the values of the variables so that all even values are at the beginning and odd values are at the end (the order within groups does not matter). Create a test case in `main` to display the values of the variables before and after the swap on the console.
+
+22. Write a function `modifyThroughPtr` with two arguments: a pointer to a variable of type `int` and a value of type `int`. The function should perform the following operations: if the second value is positive — increase the value of the variable pointed to by the first argument by that value; if the second value is negative — decrease the value of the first variable by the absolute value of the second argument; and if the second value is 0 — do not change the value. The function returns the address of the modified variable. Create a test case.

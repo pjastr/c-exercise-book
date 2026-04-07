@@ -1,0 +1,28 @@
+# Function Pointers
+
+1.  Write a function `calculate` that takes two arguments: a pointer to a function `operation` and an integer `number`. The function `operation` should take one argument of type `int` and return a value of type `int`. The function `calculate` should call the function `operation` with the argument `number` and return its result. Create a test case.
+
+2.  Write a function called `applyFunction` that takes three arguments: a pointer to a function `func` that takes one argument of type `int` and returns `int`, and two integers: `start` and `end`. The function `applyFunction` should call the function `func` for each number in the range from `start` to `end` (inclusive) and print the results to standard output. Create a test case.
+
+3.  Write a function that takes three arguments:
+
+-   two pointers to functions with one argument of type `int` returning a value of type `int`,
+-   a positive value `n` of type `int`,
+
+and returns 1 if the functions received as arguments have the same sign for integer values from 0 to $n$, and returns 0 otherwise. Create a test case.
+
+4.  Write a function `calculateOperation` that takes as arguments: a pointer to a function `operation` that takes two arguments of type `double` and returns `double`, and two arguments of type `double` — `number1` and `number2`. The function `calculateOperation` should return the result of calling the function `operation` on the arguments `number1` and `number2`. Create a test case.
+
+5.  Write a function `modifyAndSum` that takes as an argument a pointer to a function `modifier` that takes one argument of type `int` and returns `int`, and two arguments of type `int`: `number1` and `number2`. The function `modifyAndSum` should modify both numbers using the function `modifier` and return their sum. An example of a `modifier` function could be a function that increments a number by 1 or changes the sign of a number. Create a test case.
+
+6.  Create a function `applyCondition` that takes three arguments: a pointer to a function `condition` returning a value of type `int` and taking an `int`, a pointer to a function `action` also taking and returning `int`, and an integer value `value`. The function `applyCondition` should first call `condition` with `value` as the argument. If the result is 1, `applyCondition` should then call `action` on `value` and return the result. Otherwise, it should return `value` unchanged. Create a test case.
+
+7. Create a function `executeSequence` that takes two arguments: a pointer to a function `operation` returning `void` and taking an `int`, and an integer `count`. The function `executeSequence` should call the function `operation` exactly `count` times, passing consecutive numbers from 1 to `count` as the argument. Create a test case.
+
+8. Create a function `modifyValue` that takes an argument of type `int` and a pointer to a function `modifier` that takes no arguments but returns a value of type `int`. The function `modifyValue` should add the result of calling the function `modifier` to the passed value and return the resulting sum. Create a test case.
+
+9. Create a function `processPair` that takes two integers and a pointer to a function `processor` that returns `double` and takes two arguments of type `int`. The function `processPair` should call `processor` with the passed numbers, round the result down to the nearest integer, and return that value as `int`. Create a test case.
+
+10. Create a function `transformLoop` that takes a pointer to a function `transform` returning `int` and taking `int`, an initial value `start`, and a number of iterations `iterations`. The function should perform the specified number of iterations, in each iteration assigning to the result variable the value returned by the function `transform` called on the result from the previous iteration (on the value `start` in the first iteration). At the end, the function should return the final value. Create a test case.
+
+11. Create a function `computeWithFallback` that takes three arguments: a pointer to a function `primary` taking two parameters of type `int` and returning `int`, a pointer to a function `backup` with the same signature, and two integer values `a` and `b`. The function `computeWithFallback` should call the function `primary` with the arguments `a` and `b`. If the result of the function `primary` is less than zero, the function `computeWithFallback` should call `backup` with the same arguments `a` and `b` and return the result of that function. Otherwise (when the result of the function `primary` is greater than or equal to zero), the function `computeWithFallback` should return the result of the function `primary`. The function `computeWithFallback` should return a value of type `int`. Create a test case.

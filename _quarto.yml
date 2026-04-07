@@ -17,6 +17,9 @@ book:
        - debugging.qmd
        - loops.qmd
        - functions.qmd
+       - pointers.qmd
+       - function_pointers.qmd
+       - arrays.qmd
     - references.qmd
   downloads: [pdf, epub]
   repo-url: https://github.com/pjastr/c-exercise-book
@@ -39,7 +42,7 @@ format:
     header-includes: |
       \titlehead{\includegraphics[width=6in]{logo-c.jpg}}
   epub:
-    lang: pl
+    lang: en
     cover-image: logo-c.jpg
     toc: true
 
