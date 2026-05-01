@@ -20,6 +20,7 @@ book:
        - pointers.qmd
        - function_pointers.qmd
        - arrays.qmd
+       - strings.qmd
     - references.qmd
   downloads: [pdf, epub]
   repo-url: https://github.com/pjastr/c-exercise-book

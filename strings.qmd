@@ -1,0 +1,49 @@
+# Strings
+
+1. Write a function `length` that takes a string as an argument
+and returns its length as a value. Use the `char` type and do not use any built-in functions other than input/output operations. Create a test case.
+
+2. Write a function `countNums` that takes a `char` array as an argument and returns the number of characters in this array that are digits. Do not use any built-in language functions other than input/output operations. Create a test case for your function.
+
+3. Write a function `countVow` that takes a `char` array as an argument and returns the number of characters in this array that are vowels of the Latin alphabet. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+4. Write a function `cmpStrNew` that takes two arguments of type `char[]` (character arrays) and returns 1 if the strings are identical, and 0 otherwise. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+5. Write a function `lexComp` that takes two arguments of type `char[]` (character arrays) and returns 1 if the first string comes earlier in lexicographic order than the second one, and 0 otherwise. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+6. Write a function `toLowerNew` that takes a `char` array as an argument and converts all uppercase letters in it to lowercase. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+7. Write a function `toUpperNew` that takes a `char` array as an argument and converts all lowercase letters in it to uppercase. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+8. Write a function `strCopyNew` that takes two arguments of type `char[]` (character arrays): a source and a destination. The function copies the string located in the source array into the destination array. Assume that there is enough space in the destination array. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+9. Write a function `strNcopy` that takes three arguments: two character arrays `nap1`, `nap2` and a positive integer `n`. The function copies the first n characters from the string stored in array `nap1` to array `nap2`. If the string in array `nap1` is shorter than `n` characters, the function copies the entire string. The function guarantees that a null-terminating character (`'\0'`) will be placed at the end of the string in array `nap2`. Assume that there is enough space in array `nap2`. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+10. Write a function `strConcat` that takes three character arrays as arguments: `nap1`, `nap2` and `nap3`. The function writes to array `nap3` the concatenation (joining) of the strings located in arrays `nap1` and `nap2`. Assume that there is enough space in array `nap3`. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+11. Write a function `rmLower` that takes a `char` array as an argument and removes from it all characters that are lowercase letters. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+12. Write a function `rmDigits` that takes a `char` array as an argument and removes from it all characters that are digits. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+13. Write a function `cutStr` that takes as arguments a `char` array and two integers `n` and `m`, and cuts out from the received string the characters with indices from `n` to `m` (assuming that `n<m`). Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+14. Write a function `wStrCopyNew` that takes two arguments of type `wchar_t[]` (character arrays): a source and a destination. The function copies the string located in the source array into the destination array. Assume that there is enough space in the destination array. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+15. Write a function `wStrConcat` that takes three character arrays as arguments: `nap1`, `nap2` and `nap3` (use the `wchar_t` character type). The function writes to array `nap3` the concatenation (joining) of the strings located in arrays `nap1` and `nap2`. Assume that there is enough space in array `nap3`. Do not use any built-in language functions other than input/output operations. Create a test case for this function.
+
+
+16. Write a function `w16` whose argument is a string. If the string contains characters other than digits, the function should return zero. If the string contains only digits, the function should return an integer formed by sequentially transcribing the digit characters. Assume that the string is exactly 3 characters long. In this task, do not use library functions other than input/output instructions. Create a test case. Use the `wchar_t` type in your solution.
+
+17. Write a function `rmOdd` whose argument is a string. The function is supposed to remove characters from the string at odd indices. Create a test case.
+
+18. Write a function `copyEveryThird` whose argument is a string. The function is supposed to return a new string that contains only every third character of the original string. Create a test case.
+
+Example: For the string `"ABCXYZ"` the function should return `"AX"`.
+
+19. Write a function `indexLower` whose argument is a string. The function returns the index number at which the first lowercase letter from the left occurs. In the case of an empty string or no lowercase letters, the function should return zero. In this task, do not use library functions other than input/output instructions. Create a test case.
+
+20. Write a function `countOdds` whose argument is a string. The function should return the number of odd digit characters appearing in the string. Create a test case.
+
+21. Write a function `toLowerNew` that takes a pointer to a string of type `const char*` as an argument and returns a pointer to a new string in which all uppercase letters have been converted to lowercase. The original character array remains unchanged. Remember to allocate memory for the new string. Do not use any built-in language functions other than input/output operations and memory allocation functions. Create a test case for this function.
+
+22. Write a function `toUpperNew` that takes a pointer to a string of type `const char*` as an argument and returns a pointer to a new string in which all lowercase letters have been converted to uppercase. The original character array remains unchanged. Remember to allocate memory for the new string. Do not use any built-in language functions other than input/output operations and memory allocation functions. Create a test case for this function.

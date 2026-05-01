@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Loops – C - exercise book</title>
+<title>11&nbsp; Strings – C - exercise book</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./functions.html" rel="next">
-<link href="./debugging.html" rel="prev">
+<link href="./references.html" rel="next">
+<link href="./arrays.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -77,35 +77,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script defer="" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -280,7 +251,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./loops.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loops</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./strings.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Strings</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -373,7 +344,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./loops.html" class="sidebar-item-text sidebar-link active">
+  <a href="./loops.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loops</span></span></a>
   </div>
 </li>
@@ -403,7 +374,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./strings.html" class="sidebar-item-text sidebar-link">
+  <a href="./strings.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Strings</span></span></a>
   </div>
 </li>
@@ -427,9 +398,9 @@ window.Quarto = {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./loops.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loops</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./strings.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Strings</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Loops</span></h1>
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Strings</span></h1>
 </div>
 
 
@@ -446,25 +417,32 @@ window.Quarto = {
 </header>
 
 
-<p>The tasks should be solved without arrays, strings, pointers, or built-in math functions. Do not create your own functions either.</p>
 <ol type="1">
-<li><p>Write a program that displays all integers from 1 to 100 using a <code>for</code> loop.</p></li>
-<li><p>Create a program that asks the user to enter an integer <code>n</code>, and then displays the sum of all integers from 1 to <code>n</code> using a <code>while</code> loop.</p></li>
-<li><p>Write a program that reads integers from the user until zero is entered, and then displays the sum of all positive numbers and the sum of all negative numbers, using a <code>do-while</code> loop.</p></li>
-<li><p>Create a program that calculates and displays the factorial of a non-negative integer entered by the user, using a <code>for</code> loop.</p></li>
-<li><p>Write a program that displays the first 10 numbers of the Fibonacci sequence using a <code>while</code> loop.</p></li>
-<li><p>Write a program that asks the user to enter a positive integer <code>n</code>, and then calculates and displays <span class="math inline">\(\lfloor \sqrt{n} \rfloor\)</span> (the integer part/floor of the square root).</p></li>
-<li><p>Write a program that asks the user to enter a positive integer <code>n</code>, and then calculates and displays <span class="math inline">\(\lceil \sqrt{n} \rceil\)</span> (the ceiling of the square root).</p></li>
-<li><p>Write a program that asks the user to enter 10 positive integers and arranges them into a sequence <span class="math inline">\(a_1, \ldots, a_{10}\)</span>. Calculate and display how many elements of the sequence satisfy the inequality <span class="math inline">\(a_k &lt; \frac{a_{k-1}+a_{k+1}}{2}\)</span> for <span class="math inline">\(1&lt;k&lt;10\)</span>.</p></li>
-<li><p>Write a program that asks the user to enter a positive integer <span class="math inline">\(n\)</span>, and then <span class="math inline">\(n\)</span> positive integers and arranges them into a sequence <span class="math inline">\(a_1, \ldots, a_n\)</span>. Calculate and display how many elements of the sequence satisfy the inequality <span class="math inline">\(a_k &lt; \frac{a_{k-1}+a_{k+1}}{2}\)</span> for <span class="math inline">\(1&lt;k&lt;n\)</span>.</p></li>
-<li><p>Write a program that checks the divisibility of a number n by all numbers from 2 to n/2. The program should print all divisors of that number. Read the value of n from the user.</p></li>
-<li><p>Write a program that reads an integer n and prints all its digits from the end (starting from the units digit) and calculates their sum.</p></li>
-<li><p>Write a program implementing the Euclidean algorithm in an iterative version using subtraction. The program should read two natural numbers a and b, and then print their greatest common divisor.</p></li>
-<li><p>Write a program implementing the Euclidean algorithm in an iterative version using division. The program should read two natural numbers a and b, and then print their greatest common divisor.</p></li>
-<li><p>Write a program that checks whether a given number n is a prime number. The program should check all potential divisors from 2 to the square root of n (use a loop to calculate the square root). Print an appropriate message.</p></li>
-<li><p>Write a program simulating change-making. The program should read the amount to be given as change and print how many coins of denominations 5, 2, and 1 should be used to minimize the total number of coins. Print the number of coins of each type.</p></li>
-<li><p>Write a program that determines the approximate value of the square root of a number a using Newton’s method (iterative). The initial approximation is <code>x₀ = a/2</code>, and subsequent values are calculated using the formula <code>x_{i+1} = (x_i + a/x_i)/2</code>. Perform 10 iterations of the algorithm and print the final result.</p></li>
-<li><p>Write a program that reads from the user the degree of a polynomial, the coefficients (from the highest power to the constant term), and the value of x. Calculate the value of the polynomial using Horner’s method, utilizing a loop. Display the result of the calculations.</p></li>
+<li><p>Write a function <code>length</code> that takes a string as an argument and returns its length as a value. Use the <code>char</code> type and do not use any built-in functions other than input/output operations. Create a test case.</p></li>
+<li><p>Write a function <code>countNums</code> that takes a <code>char</code> array as an argument and returns the number of characters in this array that are digits. Do not use any built-in language functions other than input/output operations. Create a test case for your function.</p></li>
+<li><p>Write a function <code>countVow</code> that takes a <code>char</code> array as an argument and returns the number of characters in this array that are vowels of the Latin alphabet. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>cmpStrNew</code> that takes two arguments of type <code>char[]</code> (character arrays) and returns 1 if the strings are identical, and 0 otherwise. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>lexComp</code> that takes two arguments of type <code>char[]</code> (character arrays) and returns 1 if the first string comes earlier in lexicographic order than the second one, and 0 otherwise. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>toLowerNew</code> that takes a <code>char</code> array as an argument and converts all uppercase letters in it to lowercase. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>toUpperNew</code> that takes a <code>char</code> array as an argument and converts all lowercase letters in it to uppercase. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>strCopyNew</code> that takes two arguments of type <code>char[]</code> (character arrays): a source and a destination. The function copies the string located in the source array into the destination array. Assume that there is enough space in the destination array. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>strNcopy</code> that takes three arguments: two character arrays <code>nap1</code>, <code>nap2</code> and a positive integer <code>n</code>. The function copies the first n characters from the string stored in array <code>nap1</code> to array <code>nap2</code>. If the string in array <code>nap1</code> is shorter than <code>n</code> characters, the function copies the entire string. The function guarantees that a null-terminating character (<code>'\0'</code>) will be placed at the end of the string in array <code>nap2</code>. Assume that there is enough space in array <code>nap2</code>. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>strConcat</code> that takes three character arrays as arguments: <code>nap1</code>, <code>nap2</code> and <code>nap3</code>. The function writes to array <code>nap3</code> the concatenation (joining) of the strings located in arrays <code>nap1</code> and <code>nap2</code>. Assume that there is enough space in array <code>nap3</code>. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>rmLower</code> that takes a <code>char</code> array as an argument and removes from it all characters that are lowercase letters. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>rmDigits</code> that takes a <code>char</code> array as an argument and removes from it all characters that are digits. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>cutStr</code> that takes as arguments a <code>char</code> array and two integers <code>n</code> and <code>m</code>, and cuts out from the received string the characters with indices from <code>n</code> to <code>m</code> (assuming that <code>n&lt;m</code>). Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>wStrCopyNew</code> that takes two arguments of type <code>wchar_t[]</code> (character arrays): a source and a destination. The function copies the string located in the source array into the destination array. Assume that there is enough space in the destination array. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>wStrConcat</code> that takes three character arrays as arguments: <code>nap1</code>, <code>nap2</code> and <code>nap3</code> (use the <code>wchar_t</code> character type). The function writes to array <code>nap3</code> the concatenation (joining) of the strings located in arrays <code>nap1</code> and <code>nap2</code>. Assume that there is enough space in array <code>nap3</code>. Do not use any built-in language functions other than input/output operations. Create a test case for this function.</p></li>
+<li><p>Write a function <code>w16</code> whose argument is a string. If the string contains characters other than digits, the function should return zero. If the string contains only digits, the function should return an integer formed by sequentially transcribing the digit characters. Assume that the string is exactly 3 characters long. In this task, do not use library functions other than input/output instructions. Create a test case. Use the <code>wchar_t</code> type in your solution.</p></li>
+<li><p>Write a function <code>rmOdd</code> whose argument is a string. The function is supposed to remove characters from the string at odd indices. Create a test case.</p></li>
+<li><p>Write a function <code>copyEveryThird</code> whose argument is a string. The function is supposed to return a new string that contains only every third character of the original string. Create a test case.</p></li>
+</ol>
+<p>Example: For the string <code>"ABCXYZ"</code> the function should return <code>"AX"</code>.</p>
+<ol start="19" type="1">
+<li><p>Write a function <code>indexLower</code> whose argument is a string. The function returns the index number at which the first lowercase letter from the left occurs. In the case of an empty string or no lowercase letters, the function should return zero. In this task, do not use library functions other than input/output instructions. Create a test case.</p></li>
+<li><p>Write a function <code>countOdds</code> whose argument is a string. The function should return the number of odd digit characters appearing in the string. Create a test case.</p></li>
+<li><p>Write a function <code>toLowerNew</code> that takes a pointer to a string of type <code>const char*</code> as an argument and returns a pointer to a new string in which all uppercase letters have been converted to lowercase. The original character array remains unchanged. Remember to allocate memory for the new string. Do not use any built-in language functions other than input/output operations and memory allocation functions. Create a test case for this function.</p></li>
+<li><p>Write a function <code>toUpperNew</code> that takes a pointer to a string of type <code>const char*</code> as an argument and returns a pointer to a new string in which all lowercase letters have been converted to uppercase. The original character array remains unchanged. Remember to allocate memory for the new string. Do not use any built-in language functions other than input/output operations and memory allocation functions. Create a test case for this function.</p></li>
 </ol>
 
 
@@ -885,13 +863,13 @@ window.Quarto = {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./debugging.html" class="pagination-link" aria-label="Debugging - basics">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Debugging - basics</span></span>
+      <a href="./arrays.html" class="pagination-link" aria-label="One-Dimensional Arrays">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">One-Dimensional Arrays</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./functions.html" class="pagination-link" aria-label="Functions">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Functions</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./references.html" class="pagination-link" aria-label="Bibliography and Other Problem Sets">
+        <span class="nav-page-text">Bibliography and Other Problem Sets</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
