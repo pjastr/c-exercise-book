@@ -1,0 +1,89 @@
+# Complex data types
+
+In the following exercises, unless otherwise stated, the terms name and alias of a structure can be used interchangeably.
+
+1. Define a structure `Car` with fields: `brand` (string), `model` (character array of size 20), `year` (integer) and `isAvailable` (value 0 or 1), which represents information about a car's availability for sale. In `main`, create several variables of type `Car`.
+
+2. Create a structure `Student` that contains: `firstName` (character string), `lastName` (character string), `id` (integer) and `gpa` (floating-point number), representing a student's grade point average. In `main`, create three variables of type `Student`. Then build an array from these three variables.
+
+3. Plan a structure `Rectangle` having fields: `width` (floating-point number), `height` (floating-point number) and `color` (character string), which is to be used for storing information about a rectangle's dimensions and color. In `main`, create a 4-element array of variables of type `Rectangle`.
+
+4. Create a structure `WeatherInfo` containing: `temperature` (floating-point number), `humidity` (floating-point number) and `windSpeed` (floating-point number), which will be used to store meteorological data. In `main`, create several variables of type `WeatherInfo`.
+
+5. Design a structure `Book` with fields: `title` (character string), `author` (character string), `publishedYear` (integer) and `pages` (integer), which is to describe basic information about a book. In `main`, create a 5-element array of variables of type `Book`.
+
+6. Write a structure `Person` with fields `name` (character array of length 20) and `age` (of type `int`). Then write the functions and call each of them at least once:
+
+a) `initPerson` - a function that takes two arguments, name and age, and returns a pointer to a newly-created structure setting its members from the passed arguments.
+b) `showPerson` - a function whose argument is a variable of type `Person`. The function should print a description of the passed argument (write the age and name to standard output).
+c) `birthday` - a function whose argument is a pointer to a structure of type `Person`. The function should increase the age by 1 in the passed argument.
+
+Create a test case for each of the functions.
+
+7. Write a structure `Car` with fields `brand` (character array of length 20) and `mileage` (of type `int`). Then write the functions and call each of them at least once:
+
+a) `initCar` - a function that takes two arguments: brand and mileage, and returns a newly-created structure setting its members from the passed arguments.
+b) `showCar` - a function whose argument is a variable of type `Car`. The function should print a description of the passed argument (print the brand and mileage to standard output).
+c) `mileageService` - a function whose argument is a pointer to a structure of type `Car`. The function should add 10000 to the mileage in the passed argument.
+
+Create a test case for each of the functions.
+
+8. Write a structure `Book` with fields `title` (character array of length 50) and `page_count` (of type `int`). Then write the functions and call each of them at least once:
+
+a) `initBook` - a function that takes two arguments: title and number of pages, and returns a newly-created structure setting its members from the passed arguments.
+b) `showBook` - a function whose argument is a variable of type `Book`. The function should print a description of the passed argument (print the title and number of pages to standard output).
+c) `addPages` - a function whose argument is a pointer to a structure of type `Book`. The function should add 10 to the number of pages in the passed argument.
+
+
+
+Create a test case for each of the functions.
+
+9. Write a structure `Laptop` with fields `model` (character array of length 30) and `price` (of type `float`). Then write the functions and call each of them at least once:
+
+a) `initLaptop` - a function that takes two arguments: model and price, and returns a newly-created structure setting its members from the passed arguments.
+b) `showLaptop` - a function whose argument is a variable of type `Laptop`. The function should print a description of the passed argument (print the model and price to standard output).
+c) `reducePrice` - a function whose argument is a pointer to a structure of type `Laptop`. The function should reduce the price by 5% in the passed argument.
+
+Create a test case for each of the functions.
+
+10. Create a structure `Airplane` with two fields `model` (string) and `number_of_engines` (any integer type). Then create a function whose arguments are a non-empty array of `Airplane` structures and the size of the array. The function should return the smallest number of engines. Create a test case.
+
+11. Create a structure `Computer` with two fields `brand` (string) and `number_of_cores` (any integer type). Then create a function whose arguments are a non-empty array of `Computer` structures and the size of the array. The function should return the largest number of cores. Create a test case.
+
+12. Create a structure `Book` with two fields: `title` (string) and `page_count` (`int`). Then create a function whose arguments are a non-empty array of `Book` structures and the size of the array. The function should return the book (as a structure) with the largest number of pages. In case of several books in the array with the largest number of pages, return the last possible one. Create a test case.
+
+13. Write a structure `Car` with fields `brand` (character array of length 50) and `mileage` (of type `int`). Then write two functions and call each of them at least once:
+
+a) `initCar` - a function that takes two arguments: brand and mileage, and returns a pointer to a newly created structure, setting its members from the passed arguments. Additionally, the function should check that the brand is a string of length at least 2 and the mileage is greater than 0. If at least one of the conditions is not satisfied, the function should return NULL.
+b) `increaseMileage` - a function whose argument is a pointer to a structure of type `Car`. The function should add 1000 to the mileage in the passed argument.
+
+Make sure you can call the second function in `main`.
+
+14. Write a structure `Bike` with fields `model` (character array of length 40) and `distance_travelled` (of type `int`). Then write two functions and call each of them at least once:
+
+a) `initBike` - a function that takes two arguments: bike model and distance travelled, and returns a pointer to a newly created structure, setting its values according to the passed arguments. The function should additionally check whether the model is a string of length at least 3 and the distance travelled is greater than 0. If at least one of the conditions is not satisfied, the function should return NULL.
+b) `increaseDistance` - a function whose argument is a pointer to a structure of type `Bike`. The function should add 500 to the distance travelled.
+
+Make sure you can call the second function in `main`.
+
+15.  Write a structure `Computer` with fields `manufacturer` (character array of length 30) and `usage_hours` (of type `int`). Then write two functions and call each of them at least once:
+
+a) `initComputer` - a function that takes two arguments: manufacturer and number of usage hours, and returns a pointer to a newly created structure, setting its values according to the passed arguments. The function should also check whether the manufacturer's name has at least 2 characters and the number of hours is greater than 0. If both conditions are not jointly satisfied, the function should return NULL.
+b) `increaseUsage` - a function whose argument is a pointer to a structure of type `Computer`. The function should add 100 to the number of usage hours.
+
+Make sure you can call the second function in `main`.
+
+16. Write a structure `Apartment` with fields `address` (character array of length 100) and `number_of_residents` (of type `int`). Then write two functions and call each of them at least once:
+
+a) `initApartment` - a function that takes two arguments: address and number of residents, and returns a pointer to a newly created structure, setting its values according to the passed arguments. The function should check whether the address has at least 5 characters and the number of residents is greater than 0. If both conditions are not jointly satisfied, the function should return NULL.
+b) `increaseResidents` - a function whose argument is a pointer to a structure of type `Apartment`. The function should add 2 to the number of residents.
+
+Make sure you can call the second function in `main`.
+
+17. Create an enumeration type `Month` representing the months. Write a function `days_in_month()` that takes as an argument a value of type `Month` and returns the number of days in the given month. Ignore the leap year problem in this exercise. Create a test case for the function.
+
+18. Create an enumeration type `Day` representing the days of the week. Write a function `print_days()` that takes as arguments a value of type `Day` and a number `n`. The function should print the current day of the week, and then recursively call itself with the next day of the week, decrementing `n` with each call, until `n` drops to 0. Create a test case for the function.
+
+19. Create a union `Number` that allows simultaneous storage of an integer and a rational number. Then "wrap" the union in a structure and create a function that allows initializing the union's fields from standard input. Create a test case for the function.
+
+20. Create a structure `element` with two fields: `i` of type `int` and `next` being a pointer to the defined structure. In `main`, create several structural variables.

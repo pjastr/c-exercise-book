@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>1&nbsp; Input and Output Operations – C - exercise book</title>
+<title>13&nbsp; Complex data types – C - exercise book</title>
 <style>
 /* Default styles provided by pandoc.
 ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
@@ -33,8 +33,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./arithmeticoperators.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./singlylinkedlists.html" rel="next">
+<link href="./multidimensionalarrays.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -251,7 +251,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./inputoutput.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Input and Output Operations</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./complexdatatypes.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Complex data types</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -314,7 +314,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./inputoutput.html" class="sidebar-item-text sidebar-link active">
+  <a href="./inputoutput.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Input and Output Operations</span></span></a>
   </div>
 </li>
@@ -386,7 +386,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./complexdatatypes.html" class="sidebar-item-text sidebar-link">
+  <a href="./complexdatatypes.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Complex data types</span></span></a>
   </div>
 </li>
@@ -416,9 +416,9 @@ ul.task-list li input[type="checkbox"] {
 <main class="content" id="quarto-document-content">
 
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./inputoutput.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Input and Output Operations</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./inputoutput.html">Fundamentals of the C Language</a></li><li class="breadcrumb-item"><a href="./complexdatatypes.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Complex data types</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Input and Output Operations</span></h1>
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Complex data types</span></h1>
 </div>
 
 
@@ -435,21 +435,88 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>In the following exercises, unless otherwise stated, the terms name and alias of a structure can be used interchangeably.</p>
 <ol type="1">
-<li>Write a programme that asks the user to enter a single integer, then displays it on the screen.</li>
-<li>Create a programme that reads two floating-point numbers from the user and prints their difference.</li>
-<li>Design an application that asks the user for their year of birth, then prints the previous year (one less).</li>
-<li>Write a programme that reads three integers from the user and prints their average as a floating-point value.</li>
-<li>Create a programme that asks the user to enter two letters (characters), then prints them in reverse order.</li>
-<li>Write a programme that asks the user to enter a single floating-point number, then doubles its value and prints the result.</li>
-<li>Create a programme that reads a floating-point number from the user representing an amount in dollars, then prints how much that is in euros, using a fixed exchange rate (e.g.&nbsp;1 dollar = 0.85 euros).</li>
-<li>Write a programme that displays the following text on the screen: <code>This is a quote: "I often use the C language."</code>. Ensure that the quotation marks are correctly displayed as part of the string.</li>
-<li>Create a programme that prints a Windows folder path to standard output, e.g.&nbsp;<code>C:\Program Files\MyApplication\</code> (hardcoded, without retrieving anything from the system) or <code>C:\\Program Files\\MyApplication\\</code>.</li>
-<li>Design a programme that demonstrates how to print the following text on the screen: <code>Special characters: \t (tab), \n (newline), % (percent), \\ (backslash).</code></li>
-<li>Write a programme that reads two rational numbers from standard input representing the lengths of the legs of a right-angled triangle. Then calculate and display the length of the hypotenuse.</li>
-<li>Write a programme that reads an integer from standard input and prints its absolute value to standard output.</li>
-<li>Write a programme that reads a floating-point number from standard input and prints its absolute value to standard output.</li>
-<li>Find an example and display on standard output a case where the addition of floating-point numbers is not associative.</li>
+<li><p>Define a structure <code>Car</code> with fields: <code>brand</code> (string), <code>model</code> (character array of size 20), <code>year</code> (integer) and <code>isAvailable</code> (value 0 or 1), which represents information about a car’s availability for sale. In <code>main</code>, create several variables of type <code>Car</code>.</p></li>
+<li><p>Create a structure <code>Student</code> that contains: <code>firstName</code> (character string), <code>lastName</code> (character string), <code>id</code> (integer) and <code>gpa</code> (floating-point number), representing a student’s grade point average. In <code>main</code>, create three variables of type <code>Student</code>. Then build an array from these three variables.</p></li>
+<li><p>Plan a structure <code>Rectangle</code> having fields: <code>width</code> (floating-point number), <code>height</code> (floating-point number) and <code>color</code> (character string), which is to be used for storing information about a rectangle’s dimensions and color. In <code>main</code>, create a 4-element array of variables of type <code>Rectangle</code>.</p></li>
+<li><p>Create a structure <code>WeatherInfo</code> containing: <code>temperature</code> (floating-point number), <code>humidity</code> (floating-point number) and <code>windSpeed</code> (floating-point number), which will be used to store meteorological data. In <code>main</code>, create several variables of type <code>WeatherInfo</code>.</p></li>
+<li><p>Design a structure <code>Book</code> with fields: <code>title</code> (character string), <code>author</code> (character string), <code>publishedYear</code> (integer) and <code>pages</code> (integer), which is to describe basic information about a book. In <code>main</code>, create a 5-element array of variables of type <code>Book</code>.</p></li>
+<li><p>Write a structure <code>Person</code> with fields <code>name</code> (character array of length 20) and <code>age</code> (of type <code>int</code>). Then write the functions and call each of them at least once:</p></li>
+</ol>
+<ol type="a">
+<li><code>initPerson</code> - a function that takes two arguments, name and age, and returns a pointer to a newly-created structure setting its members from the passed arguments.</li>
+<li><code>showPerson</code> - a function whose argument is a variable of type <code>Person</code>. The function should print a description of the passed argument (write the age and name to standard output).</li>
+<li><code>birthday</code> - a function whose argument is a pointer to a structure of type <code>Person</code>. The function should increase the age by 1 in the passed argument.</li>
+</ol>
+<p>Create a test case for each of the functions.</p>
+<ol start="7" type="1">
+<li>Write a structure <code>Car</code> with fields <code>brand</code> (character array of length 20) and <code>mileage</code> (of type <code>int</code>). Then write the functions and call each of them at least once:</li>
+</ol>
+<ol type="a">
+<li><code>initCar</code> - a function that takes two arguments: brand and mileage, and returns a newly-created structure setting its members from the passed arguments.</li>
+<li><code>showCar</code> - a function whose argument is a variable of type <code>Car</code>. The function should print a description of the passed argument (print the brand and mileage to standard output).</li>
+<li><code>mileageService</code> - a function whose argument is a pointer to a structure of type <code>Car</code>. The function should add 10000 to the mileage in the passed argument.</li>
+</ol>
+<p>Create a test case for each of the functions.</p>
+<ol start="8" type="1">
+<li>Write a structure <code>Book</code> with fields <code>title</code> (character array of length 50) and <code>page_count</code> (of type <code>int</code>). Then write the functions and call each of them at least once:</li>
+</ol>
+<ol type="a">
+<li><code>initBook</code> - a function that takes two arguments: title and number of pages, and returns a newly-created structure setting its members from the passed arguments.</li>
+<li><code>showBook</code> - a function whose argument is a variable of type <code>Book</code>. The function should print a description of the passed argument (print the title and number of pages to standard output).</li>
+<li><code>addPages</code> - a function whose argument is a pointer to a structure of type <code>Book</code>. The function should add 10 to the number of pages in the passed argument.</li>
+</ol>
+<p>Create a test case for each of the functions.</p>
+<ol start="9" type="1">
+<li>Write a structure <code>Laptop</code> with fields <code>model</code> (character array of length 30) and <code>price</code> (of type <code>float</code>). Then write the functions and call each of them at least once:</li>
+</ol>
+<ol type="a">
+<li><code>initLaptop</code> - a function that takes two arguments: model and price, and returns a newly-created structure setting its members from the passed arguments.</li>
+<li><code>showLaptop</code> - a function whose argument is a variable of type <code>Laptop</code>. The function should print a description of the passed argument (print the model and price to standard output).</li>
+<li><code>reducePrice</code> - a function whose argument is a pointer to a structure of type <code>Laptop</code>. The function should reduce the price by 5% in the passed argument.</li>
+</ol>
+<p>Create a test case for each of the functions.</p>
+<ol start="10" type="1">
+<li><p>Create a structure <code>Airplane</code> with two fields <code>model</code> (string) and <code>number_of_engines</code> (any integer type). Then create a function whose arguments are a non-empty array of <code>Airplane</code> structures and the size of the array. The function should return the smallest number of engines. Create a test case.</p></li>
+<li><p>Create a structure <code>Computer</code> with two fields <code>brand</code> (string) and <code>number_of_cores</code> (any integer type). Then create a function whose arguments are a non-empty array of <code>Computer</code> structures and the size of the array. The function should return the largest number of cores. Create a test case.</p></li>
+<li><p>Create a structure <code>Book</code> with two fields: <code>title</code> (string) and <code>page_count</code> (<code>int</code>). Then create a function whose arguments are a non-empty array of <code>Book</code> structures and the size of the array. The function should return the book (as a structure) with the largest number of pages. In case of several books in the array with the largest number of pages, return the last possible one. Create a test case.</p></li>
+<li><p>Write a structure <code>Car</code> with fields <code>brand</code> (character array of length 50) and <code>mileage</code> (of type <code>int</code>). Then write two functions and call each of them at least once:</p></li>
+</ol>
+<ol type="a">
+<li><code>initCar</code> - a function that takes two arguments: brand and mileage, and returns a pointer to a newly created structure, setting its members from the passed arguments. Additionally, the function should check that the brand is a string of length at least 2 and the mileage is greater than 0. If at least one of the conditions is not satisfied, the function should return NULL.</li>
+<li><code>increaseMileage</code> - a function whose argument is a pointer to a structure of type <code>Car</code>. The function should add 1000 to the mileage in the passed argument.</li>
+</ol>
+<p>Make sure you can call the second function in <code>main</code>.</p>
+<ol start="14" type="1">
+<li>Write a structure <code>Bike</code> with fields <code>model</code> (character array of length 40) and <code>distance_travelled</code> (of type <code>int</code>). Then write two functions and call each of them at least once:</li>
+</ol>
+<ol type="a">
+<li><code>initBike</code> - a function that takes two arguments: bike model and distance travelled, and returns a pointer to a newly created structure, setting its values according to the passed arguments. The function should additionally check whether the model is a string of length at least 3 and the distance travelled is greater than 0. If at least one of the conditions is not satisfied, the function should return NULL.</li>
+<li><code>increaseDistance</code> - a function whose argument is a pointer to a structure of type <code>Bike</code>. The function should add 500 to the distance travelled.</li>
+</ol>
+<p>Make sure you can call the second function in <code>main</code>.</p>
+<ol start="15" type="1">
+<li>Write a structure <code>Computer</code> with fields <code>manufacturer</code> (character array of length 30) and <code>usage_hours</code> (of type <code>int</code>). Then write two functions and call each of them at least once:</li>
+</ol>
+<ol type="a">
+<li><code>initComputer</code> - a function that takes two arguments: manufacturer and number of usage hours, and returns a pointer to a newly created structure, setting its values according to the passed arguments. The function should also check whether the manufacturer’s name has at least 2 characters and the number of hours is greater than 0. If both conditions are not jointly satisfied, the function should return NULL.</li>
+<li><code>increaseUsage</code> - a function whose argument is a pointer to a structure of type <code>Computer</code>. The function should add 100 to the number of usage hours.</li>
+</ol>
+<p>Make sure you can call the second function in <code>main</code>.</p>
+<ol start="16" type="1">
+<li>Write a structure <code>Apartment</code> with fields <code>address</code> (character array of length 100) and <code>number_of_residents</code> (of type <code>int</code>). Then write two functions and call each of them at least once:</li>
+</ol>
+<ol type="a">
+<li><code>initApartment</code> - a function that takes two arguments: address and number of residents, and returns a pointer to a newly created structure, setting its values according to the passed arguments. The function should check whether the address has at least 5 characters and the number of residents is greater than 0. If both conditions are not jointly satisfied, the function should return NULL.</li>
+<li><code>increaseResidents</code> - a function whose argument is a pointer to a structure of type <code>Apartment</code>. The function should add 2 to the number of residents.</li>
+</ol>
+<p>Make sure you can call the second function in <code>main</code>.</p>
+<ol start="17" type="1">
+<li><p>Create an enumeration type <code>Month</code> representing the months. Write a function <code>days_in_month()</code> that takes as an argument a value of type <code>Month</code> and returns the number of days in the given month. Ignore the leap year problem in this exercise. Create a test case for the function.</p></li>
+<li><p>Create an enumeration type <code>Day</code> representing the days of the week. Write a function <code>print_days()</code> that takes as arguments a value of type <code>Day</code> and a number <code>n</code>. The function should print the current day of the week, and then recursively call itself with the next day of the week, decrementing <code>n</code> with each call, until <code>n</code> drops to 0. Create a test case for the function.</p></li>
+<li><p>Create a union <code>Number</code> that allows simultaneous storage of an integer and a rational number. Then “wrap” the union in a structure and create a function that allows initializing the union’s fields from standard input. Create a test case for the function.</p></li>
+<li><p>Create a structure <code>element</code> with two fields: <code>i</code> of type <code>int</code> and <code>next</code> being a pointer to the defined structure. In <code>main</code>, create several structural variables.</p></li>
 </ol>
 
 
@@ -870,13 +937,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="C - exercise book">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">C - exercise book</span>
+      <a href="./multidimensionalarrays.html" class="pagination-link" aria-label="Multidimensional arrays">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Multidimensional arrays</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./arithmeticoperators.html" class="pagination-link" aria-label="Arithmetic Operators">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Arithmetic Operators</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./singlylinkedlists.html" class="pagination-link" aria-label="Singly-linked lists">
+        <span class="nav-page-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Singly-linked lists</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

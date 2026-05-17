@@ -1,0 +1,475 @@
+# Singly-linked lists
+
+Use the convention discussed in the lecture in the exercises.
+
+## Without functions
+
+1. In `main`, create a headless list with three elements 4,5,-12. Then, on consecutive lines, display the elements of the list. Use the structure:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+2. In `main`, create a list with a head containing three elements 4,5,-12. Then, on consecutive lines, display the elements of the list. Use the structure:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+## Displaying
+
+3. Write a function `printListWithoutHead` that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should display the consecutive elements of the list on consecutive lines or display a message that the list is empty. Create a test case.
+
+4. Write a function `printListWithHead` that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should display the consecutive elements of the list on consecutive lines or display a message that the list is empty. Create a test case.
+
+5. Write a function `printPos` that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should display those elements of the list that are positive. Create a test case.
+
+6. Write a function `printOdd` that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should display those elements of the list that are odd. Create a test case.
+
+## Creating a list
+
+7. Write a no-argument function `createNoHead` that returns a pointer to a "newly-created" empty headless list. Create a test case. Use the structure:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+8. Write a no-argument function `createWithHead` that returns a pointer to a "newly-created" empty list with a head. Create a test case. Use the structure:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+## Adding at the beginning
+
+
+9. Write a function `addFirst` that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+and an integer `a`. The function should add a new element with value `a` at the beginning of the list. Create a test case.
+
+10. Write a function `addFirst` that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+and an integer `a`. The function should add a new element with value `a` at the beginning of the list. Create a test case.
+
+## Adding at the end
+
+11. Write a function `addLast` that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+and an integer `a`. The function should add a new element with value `a` at the end of the list. Create a test case.
+
+12. Write a function `addLast` that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+and an integer `a`. The function should add a new element with value `a` at the end of the list. Create a test case.
+
+## Searching/counters
+
+13. Write a function `find` that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+and an integer `a`. The function should return 1 if at least one element of the list is equal to `a`, and return 0 otherwise. Create a test case.
+
+14. Write a function `find` that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+and an integer `a`. The function should return 1 if at least one element of the list is equal to `a`, and return 0 otherwise. Create a test case.
+
+15. Write a function that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should return the sum of odd elements in the list. Create a test case.
+
+16. Write a function that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should return the sum of negative elements in the list. Create a test case.
+
+17. Write a function that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should return the address of the last even element or NULL if there is no such element or the list is empty. Create a test case.
+
+18. Write a function that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should return the address of the last positive element or NULL if there is no such element or the list is empty. Create a test case.
+
+## Removing individual elements
+
+19. Write a function that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should remove the first element of the list (provided the list is not empty). Create a test case.
+
+20. Write a function that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should remove the first element of the list (provided the list is not empty). Create a test case.
+
+21. Write a function that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should remove the last element of the list (provided the list is not empty). Create a test case.
+
+22. Write a function that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should remove the last element of the list (provided the list is not empty). Create a test case.
+
+23. Write a function that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should remove the second-to-last element of the list (provided the list has at least two elements). Create a test case.
+
+24. Write a function that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should remove the second-to-last element of the list (provided the list has at least two elements). Create a test case.
+
+## Removing the entire list
+
+25. Write a function that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should remove the entire list (manually, element by element). After removal, make sure the list is empty according to the convention. Create a test case.
+
+26. Write a function that takes as an argument a list with a head with elements of type:
+
+``` c
+struct element {
+    int x;
+    struct element * next;
+};
+```
+
+The function should remove the entire list (manually, element by element). After removal, make sure the list is empty according to the convention. Create a test case.
+
+## Miscellaneous exercises
+
+27. Write a function that takes as an argument a headless list with elements of type:
+
+```c
+struct node {
+    int i;
+    struct node * next;
+};
+```
+
+The function should display on the console, on consecutive lines, the values of those elements in the list that are perfect squares of integers. Create a test case.
+
+Example. If the list consists of the elements 4,5,6,-34,0,25,11, then 4,0,25 should be displayed on consecutive lines.
+
+28. Write a function that takes as an argument a headless list with elements of type:
+
+```c
+struct node {
+    double x;
+    struct node * next;
+};
+```
+
+and returns the smallest of the numbers in the list. In the case of an empty list, the function should return zero. Create one test case.
+
+
+29. Write a function that takes as an argument a headless list with elements of type:
+
+``` c
+struct node {
+    int i;
+    struct node * next;
+};
+```
+
+The function should duplicate the value of the last element, provided the list is not empty. In the case of an empty list, the function should do nothing. Create a test case.
+
+Example: For the list 3,4,5, the 5 should be duplicated, so after modification the list should have the form 3,4,5,5.
+
+
+30. Write a function that takes as an argument a list with a head with elements of type:
+
+``` c
+struct elem {
+    int a;
+    struct elem * next;
+};
+```
+
+The function should duplicate the value of the last element, provided the list is not empty. In the case of an empty list, the function should do nothing. Create a test case.
+
+Example: For the list 3,4,5, the 5 should be duplicated, so after modification the list should have the form 3,4,5,5.
+
+31. Write a function that compares two lists with a head with elements of type:
+
+```c
+struct node {
+    int i;
+    struct node * next;
+};
+```
+and returns 1 if the last elements of the lists are equal, and 0 otherwise (including when either of the lists or both are empty). Create one test case.
+
+
+32. Write a function that compares two headless lists with elements of type:
+
+```c
+struct node {
+    int a;
+    struct node * next;
+};
+```
+and returns 1 if the lists are of the same length, and 0 otherwise (including when either of the lists or both are empty). Create a test case.
+
+
+33. Write a function that takes two lists with a head with elements of type:
+
+```c
+struct node {
+    int value;
+    struct node * next;
+};
+```
+and returns 1 if the sum of all odd elements in both lists is the same, and 0 otherwise (including when either of the lists or both are empty). Create a test case.
+
+
+34. Write a function that takes two headless lists with elements of type:
+
+```c
+struct node {
+    int w;
+    struct node * next;
+};
+```
+and returns 1 if the sum of all even elements in both lists is the same, and 0 otherwise (including when either of the lists or both are empty). Create a test case.
+
+35. Write a function that takes as an argument a list with a head with elements of type:
+
+``` c
+struct node {
+    int x;
+    struct node * next;
+};
+```
+
+The function should return the sum of odd elements from the list. Create one test case.
+
+36. Write a function that takes as an argument a headless list with elements of type:
+
+``` c
+struct elem {
+    int x;
+    struct elem * next;
+};
+```
+
+The function should double all positive elements in the list (if any exist). Create one test case.
+
+37. Write a function that takes as an argument a list with a head with elements of type:
+
+``` c
+struct node {
+    int y;
+    struct node * next;
+};
+```
+
+and two integers `a` and `b`. The function should add two new elements at the beginning of the list and set their values respectively from the given arguments. Create one test case.
+
+38. Write a function that takes as an argument a headless list with elements of type:
+
+``` c
+struct node {
+    int a;
+    struct node * next;
+};
+```
+
+and two integers `a` and `b`. The function should add two new elements at the beginning of the list and set their values respectively from the given arguments. Create one test case.
+
+
+39. Write a function that takes as an argument a headless list with elements of type:
+
+``` c
+struct element {
+    float value;
+    struct element * next;
+};
+```
+
+The function should replace each element's value with its absolute value. For an empty list, the function should do nothing. Create a test case.
+
+
+40. Write a function that takes as an argument a list with a head with elements of type:
+
+``` c
+struct node {
+    int val;
+    struct node * next;
+};
+```
+
+The function should replace each element's value with its absolute value. For an empty list, the function should do nothing. Create a test case.
+
+
+41. Write a function that takes as an argument a list with a head with elements of type:
+
+```c
+struct node {
+    int x;
+    struct node * next;
+};
+```
+
+and an integer `d`. The function should return how many elements in the list are equal to `d`. Create one test case.

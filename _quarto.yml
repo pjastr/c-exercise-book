@@ -21,6 +21,9 @@ book:
        - function_pointers.qmd
        - arrays.qmd
        - strings.qmd
+       - multidimensionalarrays.qmd
+       - complexdatatypes.qmd
+       - singlylinkedlists.qmd
     - references.qmd
   downloads: [pdf, epub]
   repo-url: https://github.com/pjastr/c-exercise-book
